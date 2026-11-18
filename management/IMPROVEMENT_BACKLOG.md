@@ -29,6 +29,7 @@ Formato de contrato: `.claude/skills/continuous-improvement/SKILL.md`. Creado: 2
 | DW-023 | Calendario de cobros, mensualidades y renovaciones de dominios/hosting | P1 | operations-finance | DW-019 | Propuesta | Todos los clientes activos con día de cobro y vencimientos; alerta 30 días antes de cada vencimiento |
 | DW-024 | Plan editorial mensual (docs/marketing/PLAN_EDITORIAL.md) para Instagram y TikTok con borradores en Metricool | P2 | content-strategist | DW-021 | Propuesta | 12 piezas al mes ligadas a un objetivo comercial, cargadas como borradores para revisión; nada publicado sin aprobación |
 | DW-025 | Verificar que los agentes ven los conectores en el Claude Code de la dirección (nombres de herramientas MCP) | P2 | Director | DW-018 | Propuesta | sales-manager lee Notion y crea un borrador en Gmail en una prueba; si los nombres difieren, se corrigen en los agentes y en settings.json |
+| DW-026 | Investigador de Mejoras (GitHub): agente, comando, método y rutina quincenal que valida, descarta y propone retirar habilidades | P2 | Director | Aprobación del diseño; página 15 en Notion | En validación (PR) | Agente solo lectura y sin ejecutar código de terceros; rúbrica de licencia y seguridad; filtro de validación; poda de habilidades; informe por agente en Notion; rutina creada solo tras aprobación; primera ejecución revisada por la dirección |
 
 ## Contratos
 
