@@ -9,3 +9,4 @@
 | 2026-11-18 | Publicación DW-001…DW-007 | Publicado por conector de Hostinger (23 archivos) + caché del CDN limpiada; verificado en vivo | Director | Respaldo previo en /mnt/project-files/domiwebb-deploy/respaldo-produccion-antes-ga4-2026-11-18 |
 | 2026-11-18 | DW-014 | En validación (PR) | Pendiente quality-reviewer | 14 capturas (7 páginas × móvil/escritorio) idénticas píxel a píxel |
 | 2026-11-18 | DW-017 | Validado: ronda 1 RECHAZADO (filtro saltable con renombres; .git al alcance del agente), ronda 2 APROBADO CON OBSERVACIONES | quality-reviewer | Correcciones en PR #7; prueba contra producción pendiente de la primera ejecución manual en Actions; antes de activar la IA: fijar acciones por SHA y proteger main |
+| 2026-11-18 | DW-018 | En validación (PR) | Pendiente quality-reviewer y aprobación de la dirección | 8 agentes ampliados a todo el negocio, 3 nuevos (D-022 a D-024), 3 comandos, playbook, catálogo, entrega WAAS, reglas de conectores |

@@ -9,6 +9,7 @@
 | 5. Integraciones | GA4, Search Console, PageSpeed, redirección www | L5, L6 y credenciales de lectura | Pendiente |
 | 6. Primer ciclo operativo | Auditoría completa, P1 corregidas y validadas | 4 semanas de datos | Pendiente |
 | 7. Automatización | GitHub Actions diaria/semanal con tope de coste | L10 presupuesto de API | Preparada (DW-017): salud diaria gratis activa al fusionar; auditoría con IA apagada hasta que la dirección guarde la clave y active el interruptor |
+| 7b. Ecosistema de negocio | Agentes ampliados a ventas, entrega, consultoría, operaciones; CRM en Notion; precios WAAS | Fusión de DW-018; DW-019 y DW-020 aprobados | En PR (DW-018) |
 | 8. Optimización | Medir impacto, podar agentes y skills sin uso | — | Pendiente |
 
 DW-001 (importación del sitio) en validación en PR #2.
