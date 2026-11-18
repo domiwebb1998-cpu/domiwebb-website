@@ -2,7 +2,7 @@
 
 Dueño: `marketing-specialist`. Aprobación de precios y condiciones: dirección humana. Última revisión: 2026-11-18.
 
-Regla: ningún agente usa en propuestas, contenido o mensajes un valor que no esté marcado **Aprobado** en esta tabla. Lo demás es `PENDIENTE DE VALIDACIÓN`.
+Regla: la versión que leen los agentes automáticos de contenido y leads es la página de Notion "13 · OFERTA Y PRECIOS"; esta tabla y esa página se actualizan juntas. Ningún agente usa en propuestas, contenido o mensajes un valor que no esté marcado **Aprobado** en esta tabla. Lo demás es `PENDIENTE DE VALIDACIÓN`.
 
 ## Principio
 No vendemos páginas web. Creamos herramientas para que los negocios crezcan, se vean profesionales y generen más clientes. La escalera de valor es: **página web (entrada) → sistemas y automatización → consultoría**.
@@ -14,10 +14,10 @@ No vendemos páginas web. Creamos herramientas para que los negocios crezcan, se
 | Promesa | Página optimizada para el nicho del cliente, lista en 24 a 72 horas | Publicado en el sitio |
 | Incluye | Diseño por nicho, botón de WhatsApp, SEO básico, hosting + dominio, SSL, soporte | Publicado en el sitio |
 | Modelo de pago | Pago inicial + mensualidad | Publicado en el sitio |
-| Valor del pago inicial | — | PENDIENTE DE VALIDACIÓN |
-| Valor de la mensualidad | — | PENDIENTE DE VALIDACIÓN |
-| Niveles (básico / profesional / premium) | — | PENDIENTE DE VALIDACIÓN |
-| Permanencia mínima, cambios incluidos por mes, qué pasa si cancela (dominio, contenido) | — | PENDIENTE DE VALIDACIÓN |
+| Valor del pago inicial | Propuesta en `docs/marketing/PROPUESTA_PRECIOS_WAAS.md` | PENDIENTE DE VALIDACIÓN (propuesta 2026-11-18, no usar) |
+| Valor de la mensualidad | Propuesta en `docs/marketing/PROPUESTA_PRECIOS_WAAS.md` | PENDIENTE DE VALIDACIÓN (propuesta 2026-11-18, no usar) |
+| Niveles | Presencia / Profesional / Crecimiento (propuesta) | PENDIENTE DE VALIDACIÓN |
+| Permanencia mínima, cambios incluidos por mes, qué pasa si cancela (dominio, contenido) | Propuesta en el mismo documento | PENDIENTE DE VALIDACIÓN |
 | Nichos con plantilla lista | — | PENDIENTE (ver `docs/marketing/NICHOS.md` cuando exista) |
 
 ## 2. Sistemas y automatización

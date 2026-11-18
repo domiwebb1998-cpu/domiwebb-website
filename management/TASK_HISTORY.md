@@ -10,3 +10,5 @@
 | 2026-11-18 | DW-014 | En validación (PR) | Pendiente quality-reviewer | 14 capturas (7 páginas × móvil/escritorio) idénticas píxel a píxel |
 | 2026-11-18 | DW-017 | Validado: ronda 1 RECHAZADO (filtro saltable con renombres; .git al alcance del agente), ronda 2 APROBADO CON OBSERVACIONES | quality-reviewer | Correcciones en PR #7; prueba contra producción pendiente de la primera ejecución manual en Actions; antes de activar la IA: fijar acciones por SHA y proteger main |
 | 2026-11-18 | DW-018 | En validación (PR) | Pendiente quality-reviewer y aprobación de la dirección | 8 agentes ampliados a todo el negocio, 3 nuevos (D-022 a D-024), 3 comandos, playbook, catálogo, entrega WAAS, reglas de conectores |
+| 2026-11-18 | DW-019 | Cerrada | Director | Base Notion 14 · CLIENTES Y ENTREGAS creada; CRM_NOTION.md actualizado |
+| 2026-11-18 | DW-020 | En validación | Pendiente de la dirección | Propuesta de 3 planes con referencias de 5 competidores |
