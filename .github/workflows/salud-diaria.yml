@@ -1,0 +1,74 @@
+# DW-017 · Chequeo diario de salud de domiwebb.com.
+# Gratis: no usa IA ni APIs de pago. Solo lee el sitio público.
+# Si algo crítico falla abre (o actualiza) una issue con la etiqueta "alerta-sitio";
+# GitHub avisa por correo a quien vigila el repositorio. Cuando vuelve a estar bien, la cierra.
+name: Salud diaria del sitio
+
+on:
+  schedule:
+    - cron: "0 11 * * *"   # 6:00 a. m. hora de Bogotá
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: salud-diaria
+  cancel-in-progress: false
+
+jobs:
+  salud:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Revisar el sitio en vivo
+        id: chequeo
+        continue-on-error: true
+        run: python3 scripts/monitor/salud_sitio.py --informe informe.md --json resultado.json
+
+      - name: Publicar el informe en el resumen de la ejecución
+        if: always()
+        run: |
+          if [ -f informe.md ]; then cat informe.md >> "$GITHUB_STEP_SUMMARY"; else echo "El chequeo no generó informe." >> "$GITHUB_STEP_SUMMARY"; fi
+
+      - name: Guardar el informe (30 días)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: salud-${{ github.run_id }}
+          path: |
+            informe.md
+            resultado.json
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Abrir o actualizar la alerta
+        if: steps.chequeo.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          gh label create alerta-sitio --color B60205 --description "Fallo crítico del chequeo diario" 2>/dev/null || true
+          { echo "El chequeo diario encontró fallos críticos. Ejecución: $RUN_URL"; echo; cat informe.md 2>/dev/null || echo "Sin informe: el script no terminó."; } > cuerpo.md
+          n=$(gh issue list --label alerta-sitio --state open --json number --jq '.[0].number')
+          if [ -n "$n" ]; then
+            gh issue comment "$n" --body-file cuerpo.md
+          else
+            gh issue create --title "🔴 Alerta: domiwebb.com tiene fallos críticos" --label alerta-sitio --body-file cuerpo.md
+          fi
+
+      - name: Cerrar la alerta si todo volvió a estar bien
+        if: steps.chequeo.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for n in $(gh issue list --label alerta-sitio --state open --json number --jq '.[].number'); do
+            gh issue close "$n" --comment "Resuelto: el chequeo de $(date -u +%F) pasó sin fallos críticos." --reason completed
+          done
+
+      - name: Marcar la ejecución como fallida si hubo críticos
+        if: steps.chequeo.outcome == 'failure'
+        run: exit 1
