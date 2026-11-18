@@ -4,18 +4,21 @@ Formato de contrato: `.claude/skills/continuous-improvement/SKILL.md`. Creado: 2
 
 | ID | Acción | Prioridad | Responsable | Dependencias | Estado | Criterios de aceptación |
 |---|---|---|---|---|---|---|
-| DW-001 | Importar el código actual del sitio desde Hostinger | P1 | Dirección humana + web-developer | — | En validación (PR #2) | El repo contiene los archivos servidos hoy; las 18 URL del sitemap y /assets coinciden con producción |
-| DW-002 | Configuración del ecosistema (CLAUDE.md, agentes, settings, management) | P1 | Director | L2 aprobada | En validación (PR) | PR abierto; settings.json válido; deny bloquea push a main; quality-reviewer aprueba |
-| DW-003 | Plan de medición: eventos whatsapp_click, calculator_use, quiz_complete, form_submit | P1 | analytics-specialist | DW-001 | En validación (PR ciclo 1) | Documento en docs/analytics/ con eventos, disparadores, parámetros y verificación |
-| DW-004 | Instalar GA4 y actualizar política de cookies | P1 | web-developer | DW-003, L5 | En validación (PR instalar GA4; G-FDCJZQGKFG) | Eventos visibles en GA4 DebugView; política de cookies menciona GA4; quality-reviewer valida |
-| DW-005 | Decidir y aplicar AdSense en el sitio comercial | P1 | Director | L4 | En validación (PR quitar AdSense) | Decisión registrada; si se retira, ningún adsbygoogle.js en domiwebb.com |
-| DW-006 | Redirección 301 www → domiwebb.com e /index.html → / | P2 | web-developer | L6, DW-001 | En validación; publicar requiere aprobación | www.domiwebb.com/<ruta> responde 301 a https://domiwebb.com/<ruta>, comprobado con curl -I tras publicar (ver D-009) |
-| DW-007 | Añadir og:image a todas las páginas | P2 | web-developer | DW-001 | En validación (PR ciclo 1) | Vista previa con imagen al compartir en WhatsApp; seo-page sin avisos OG |
+| DW-001 | Importar el código actual del sitio desde Hostinger | P1 | Dirección humana + web-developer | — | Cerrada (publicada y verificada en vivo 2026-11-18) | El repo contiene los archivos servidos hoy; las 18 URL del sitemap y /assets coinciden con producción |
+| DW-002 | Configuración del ecosistema (CLAUDE.md, agentes, settings, management) | P1 | Director | L2 aprobada | Cerrada (publicada y verificada en vivo 2026-11-18) | PR abierto; settings.json válido; deny bloquea push a main; quality-reviewer aprueba |
+| DW-003 | Plan de medición: eventos whatsapp_click, calculator_use, quiz_complete, form_submit | P1 | analytics-specialist | DW-001 | Cerrada (publicada y verificada en vivo 2026-11-18) | Documento en docs/analytics/ con eventos, disparadores, parámetros y verificación |
+| DW-004 | Instalar GA4 y actualizar política de cookies | P1 | web-developer | DW-003, L5 | Publicada 2026-11-18; whatsapp_click visto en Tiempo real. Falta marcar eventos clave | Eventos visibles en GA4 DebugView; política de cookies menciona GA4; quality-reviewer valida |
+| DW-005 | Decidir y aplicar AdSense en el sitio comercial | P1 | Director | L4 | Cerrada (publicada y verificada en vivo 2026-11-18) | Decisión registrada; si se retira, ningún adsbygoogle.js en domiwebb.com |
+| DW-006 | Redirección 301 www → domiwebb.com e /index.html → / | P2 | web-developer | L6, DW-001 | Cerrada (publicada y verificada en vivo 2026-11-18) | www.domiwebb.com/<ruta> responde 301 a https://domiwebb.com/<ruta>, comprobado con curl -I tras publicar (ver D-009) |
+| DW-007 | Añadir og:image a todas las páginas | P2 | web-developer | DW-001 | Cerrada (publicada y verificada en vivo 2026-11-18) | Vista previa con imagen al compartir en WhatsApp; seo-page sin avisos OG |
 | DW-008 | Sustituir demos en *.hostingersite.com por subdominios propios | P2 | web-developer | Hostinger (humano) | Propuesta | Ninguna demo enlazada en dominio temporal |
 | DW-009 | Recoger 3 testimonios o casos reales con permiso | P2 | Dirección humana + marketing-specialist | — | Propuesta | Textos aprobados por cada cliente |
 | DW-010 | Revisión de la publicación automática de Pyme al Día | P2 | Director + quality-reviewer | L7, L8 | Propuesta | Nuevas guías llegan por PR y pasan validación |
 | DW-011 | Ampliar schema (Perfil de Empresa, horario) y crear llms.txt | P3 | seo-specialist → web-developer | DW-001 | Parcial: llms.txt hecho; schema GBP pendiente de datos | Validador sin errores; /llms.txt responde 200 |
 | DW-013 | Limpiar del servidor los restos del sitio anterior (.builds con node_modules, assets.8532, demo, respaldos, default.php) | P3 | Dirección humana | Aprobación de borrado | Propuesta | Las rutas siguen devolviendo 410 y ya no existen en public_html; copia de respaldo descargada antes |
+| DW-014 | Quitar los metadatos C2PA de los SVG (iconos en línea y assets/icons) | P1 | web-developer | — | En validación (PR aligerar SVG) | Sin `c2pa` en el sitio; capturas antes/después idénticas píxel a píxel; portada < 40 KB |
+| DW-015 | Conseguir que Google indexe las 17 páginas "descubiertas, sin indexar" | P1 | seo-specialist | DW-014 | En curso: sitemap reenviado e indexación solicitada para paginas-web, sistemas-y-automatizacion y consultoria-empresarial (2026-11-18) | ≥ 10 de 18 URL del sitemap indexadas en Search Console |
+| DW-016 | Línea base de PageSpeed (móvil y escritorio) de 4 páginas clave | P2 | analytics-specialist | — | Bloqueada hoy por cuota de la API; reintentar | Puntuaciones y LCP/CLS/TBT registrados en METRICS.md |
 | DW-012 | Texto alt en imágenes no decorativas | P3 | web-developer | DW-001 | Cerrada sin cambios | Lighthouse accesibilidad sin avisos de alt |
 
 ## Contratos
