@@ -43,3 +43,15 @@ Comparten la verdad en: Pipeline comercial (prospectos), Notion 13 · OFERTA Y P
 1. El Radar contaba como pendientes las ideas "En guion" aunque ya estuvieran publicadas, así que dejó de crear ideas desde el 29 de octubre. Ahora cuenta solo "Nueva" y "En hooks", y el Copywriter cierra cada idea como "Producida". Las 14 ideas ya publicadas se cerraron.
 2. El 09 Leads solo diagnosticaba leads de contenido (había 0) y su mensaje competía con el del Director. Se convirtió en el 09 Director comercial, que diagnostica todos los leads y escribe un único mensaje por lead.
 3. El 11 Auditor ahora vigila al Director, avisa si pasan 7 días sin ideas nuevas, si hay ideas atascadas, si falta contenido para 5 días hábiles, si los mensajes del Director no se envían y si el contenido no registra leads.
+
+## Dos canales de envío en el Pipeline (D-029)
+
+| | 📸 Instagram | ✉️ Correo |
+|---|---|---|
+| Botón (arriba del Pipeline) | "Enviar Instagram (n)" | "Enviar correos del día (n/20)" |
+| Quién prepara el mensaje | 09 Director comercial (`accionDirector`, máx. 8 al día) | 09 Director comercial (`accionCorreo`: asunto + cuerpo, máx. 20 al día) |
+| Quién envía | El dueño: la cola copia cada mensaje y abre el perfil; se pega y se envía. Instagram no permite DMs automáticos a quien no ha escrito primero, y un bot arriesga la cuenta | Gmail del dueño, automático. Tocar "Enviar" es la aprobación de ese lote |
+| Para qué leads | Sin correo y con perfil de Instagram | Con correo público de empresa (lo busca el 10 Prospección; nunca se adivina) |
+| Respuestas | El dueño toca "💬 Respondió" | El Director las lee en Gmail cada mañana: pasa a Conversación, a Cerrado si acepta (y avisa con 🎉) o a Descartado con `noContactar` si responde NO |
+
+Reglas comunes (Ley 2300 de 2023 y Ley 1581 de 2012): lunes a viernes de 7 a. m. a 7 p. m., sábados de 8 a. m. a 3 p. m., nunca domingos ni festivos (el Pipeline bloquea los botones fuera de horario); un mensaje por semana por negocio sumando los dos canales; cada correo lleva la línea "responde NO"; los correos y datos de contacto viven solo en el Pipeline, nunca en este repositorio ni en Notion.

@@ -14,3 +14,4 @@
 | 2026-11-18 | DW-020 | En validación | Pendiente de la dirección | Propuesta de 3 planes con referencias de 5 competidores |
 | 2026-11-18 | DW-020 | Cerrada | Domiwebb (dirección) | Precios aprobados (D-027); Notion 13 · OFERTA Y PRECIOS actualizada |
 | 2026-11-18 | D-028 | Cerrada | Domiwebb (dirección) | Cadena de agentes corregida: Radar, Copywriter, 09 Director comercial, Auditor; 14 ideas cerradas como Producida; docs/operations/SISTEMA_AGENTES.md |
+| 2026-11-18 | D-029 | Cerrada | Domiwebb (dirección) | Pipeline: botones "📸 Enviar Instagram" y "✉️ Enviar correos del día"; 10 Prospección captura correos públicos; 09 Director prepara correos y lee respuestas en Gmail |
