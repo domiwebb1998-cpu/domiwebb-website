@@ -15,6 +15,8 @@ Implementados en `assets/site.js`. Solo se envían si GA4 (`gtag`) está cargado
 | `quiz_complete` | El visitante responde las 3 preguntas del diagnóstico rápido (una vez por página) | `sector`, `pain`, `has_web` | No |
 | `form_submit` | Envío válido del formulario de contacto (se abre WhatsApp) | `service`, `page_path` | Sí |
 
+En GA4, la medición mejorada tiene desactivados los clics salientes y las interacciones con formularios (D-017): el enlace de WhatsApp del formulario lleva el nombre y el mensaje en `?text=` y no debe llegar a GA4.
+
 Las respuestas del diagnóstico (`sector`, `pain`, `has_web`) son opciones fijas del formulario, no datos personales. Nombre y mensaje del formulario **no** se envían a GA4.
 
 ## Instalación (DW-004, requiere aprobación y datos de la dirección)
@@ -23,7 +25,7 @@ Las respuestas del diagnóstico (`sector`, `pain`, `has_web`) son opciones fijas
 3. Marcar `whatsapp_click` y `form_submit` como eventos clave en GA4.
 4. Registrar como dimensiones personalizadas: `section`, `link_id`, `sector`, `pain`, `has_web`, `service`.
 5. ✅ Actualizar `politica-de-cookies.html` y `politica-de-privacidad.html` para mencionar Google Analytics (finalidad estadística, Ley 1581 de 2012).
-6. Verificar en DebugView que llegan los 4 eventos.
+6. Verificar en DebugView que llegan los 4 eventos y que no llega ningún evento `click` con `link_url` que contenga `text=` (probar el botón "Abrir WhatsApp" del formulario).
 
 ## Lo que GA4 no mide
 Si la conversación de WhatsApp termina en venta. Para eso hace falta un registro manual de la dirección (origen del contacto → ¿cliente?) o un CRM. PENDIENTE: definir con la dirección.
