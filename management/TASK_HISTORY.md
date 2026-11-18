@@ -8,3 +8,4 @@
 | 2026-11-18 | DW-004 | Validado: APROBADO CON OBSERVACIONES (H1 corregido en GA4, D-017) | quality-reviewer; falta DebugView tras publicar | Etiqueta en 19 páginas; prueba local: config + whatsapp_click llegan a dataLayer sin errores JS |
 | 2026-11-18 | Publicación DW-001…DW-007 | Publicado por conector de Hostinger (23 archivos) + caché del CDN limpiada; verificado en vivo | Director | Respaldo previo en /mnt/project-files/domiwebb-deploy/respaldo-produccion-antes-ga4-2026-11-18 |
 | 2026-11-18 | DW-014 | En validación (PR) | Pendiente quality-reviewer | 14 capturas (7 páginas × móvil/escritorio) idénticas píxel a píxel |
+| 2026-11-18 | DW-017 | Validado: ronda 1 RECHAZADO (filtro saltable con renombres; .git al alcance del agente), ronda 2 APROBADO CON OBSERVACIONES | quality-reviewer | Correcciones en PR #7; prueba contra producción pendiente de la primera ejecución manual en Actions; antes de activar la IA: fijar acciones por SHA y proteger main |

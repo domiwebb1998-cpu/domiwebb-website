@@ -79,7 +79,7 @@ jobs:
             --model ${{ env.MODELO }}
             --max-turns ${{ env.MAX_TURNOS }}
             --allowedTools "Read(//tmp/salud.md),WebFetch(domain:domiwebb.com),Write(management/audit-reports/**),Edit(management/audit-reports/**),Edit(management/IMPROVEMENT_BACKLOG.md)"
-            --disallowedTools "Bash,Read(//proc/**),Read(//home/runner/**),Read(.git/**)"
+            --disallowedTools "Bash,Read(//proc/**),Read(//home/runner/work/_temp/**),Read(//home/runner/.*/**),Read(//home/runner/runners/**),Read(.git/**)"
           prompt: |
             Actúa como DOMIWEBB AI DIRECTOR (lee CLAUDE.md) en una auditoría semanal de solo lectura.
             Hoy es ${{ steps.guarda.outputs.fecha }}.
@@ -105,6 +105,9 @@ jobs:
           limpio="$RUNNER_TEMP/limpio"
           git -c core.hooksPath=/dev/null clone --quiet --depth 1 --branch "$GITHUB_REF_NAME" \
             "https://github.com/${GITHUB_REPOSITORY}.git" "$limpio"
+          # Fijar el clon al mismo commit que revisó el agente (evita diferencias si alguien fusiona mientras tanto).
+          git -C "$limpio" -c core.hooksPath=/dev/null fetch --quiet --depth 1 origin "$GITHUB_SHA"
+          git -C "$limpio" -c core.hooksPath=/dev/null checkout --quiet FETCH_HEAD
           diff -rq --exclude=.git "$limpio" "$GITHUB_WORKSPACE" > "$RUNNER_TEMP/diff.txt" || true
           : > "$RUNNER_TEMP/permitidos.txt"; fuera=""
           while read -r linea; do
