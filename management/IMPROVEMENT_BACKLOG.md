@@ -391,3 +391,4 @@ Formato de contrato: `.claude/skills/continuous-improvement/SKILL.md`. Creado: 2
 - Evidencia final: —
 - Responsable de validación: quality-reviewer
 - Decisión del Director: —
+| DW-027 | Aplicar el informe de mejoras del 2026-11-18: escaneo SkillSpector en quality-reviewer, retirar `sms`, fusionar `seo-agentic` en `seo-geo`, borrar la rutina 04 (Escritorio) y quitar Canva de las rutinas | P2 | Director | Aprobación de la dirección (D-029 a D-032) | En validación (PR) | Agentes, CLAUDE.md, registro e INSTALACION.md coherentes; primer escaneo de claude-seo y marketing-skills anotado en INSTALACION.md; ninguna rutina con el conector de Canva |

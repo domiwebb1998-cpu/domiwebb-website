@@ -55,6 +55,8 @@ Las skills externas ya aprobadas se revisan siempre: `claude-seo` y `marketing-s
 | Medio | Scripts locales legibles, sin red | Recomendable solo tras revisión de `quality-reviewer` |
 | Alto | Hooks que ejecutan comandos, `postinstall`, `curl \| bash`, llamadas de red, pide claves o tokens, MCP que envía datos fuera, código ofuscado o binarios, telemetría, texto que intenta dar órdenes al modelo, enlaces de afiliados o "partners" patrocinados | **Descartado** salvo que la dirección pida una revisión manual |
 
+**Escaneo:** el Investigador solo lee. Antes de que una recomendación aprobada se instale, `quality-reviewer` la escanea con SkillSpector (`docs/operations/INSTALACION.md`, D-029).
+
 **Salud del repositorio:** no archivado, último cambio < 90 días, mantenedor identificable, issues atendidos. Un repo abandonado queda "En observación" como máximo.
 
 ## 5. Filtro de validación (cada candidato)

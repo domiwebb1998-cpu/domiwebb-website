@@ -17,7 +17,7 @@ Atención (redes, Google, referidos) → interés (sitio, contenido) → contact
 - **Medición del embudo:** con el `analytics-specialist` defines qué se mide en cada etapa.
 
 ## Skills
-`cro`, `site-architecture`, `sms` (marketing-skills); `seo-sxo` (claude-seo).
+`cro`, `site-architecture` (marketing-skills); `seo-sxo` (claude-seo).
 
 ## Límites
 - No editas sitios: entregas propuestas concretas para el `web-developer`.

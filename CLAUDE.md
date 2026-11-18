@@ -132,10 +132,10 @@ La matriz completa por agente está en `docs/strategy/OPERATING_MODEL.md`.
 
 Instalación y versiones fijadas en `docs/operations/INSTALACION.md`. Referencias principales:
 
-- **Claude SEO** (`claude-seo`) para SEO técnico y GEO: `seo-audit`, `seo-technical`, `seo-page`, `seo-schema`, `seo-sitemap`, `seo-local`, `seo-geo`, `seo-agentic`, `seo-content`, `seo-content-brief`, `seo-cluster`, `seo-sxo`, `seo-drift`, `seo-google`.
-- **Marketing Skills** (`marketing-skills`) para marketing, copy y CRO: `product-marketing`, `customer-research`, `competitor-profiling`, `marketing-plan`, `offers`, `pricing`, `prospecting`, `site-architecture`, `copywriting`, `cro`, `content-strategy`, `analytics`, `sms`, `social`.
+- **Claude SEO** (`claude-seo`) para SEO técnico y GEO: `seo-audit`, `seo-technical`, `seo-page`, `seo-schema`, `seo-sitemap`, `seo-local`, `seo-geo`, `seo-content`, `seo-content-brief`, `seo-cluster`, `seo-sxo`, `seo-drift`, `seo-google`.
+- **Marketing Skills** (`marketing-skills`) para marketing, copy y CRO: `product-marketing`, `customer-research`, `competitor-profiling`, `marketing-plan`, `offers`, `pricing`, `prospecting`, `site-architecture`, `copywriting`, `cro`, `content-strategy`, `analytics`, `social`.
 
-Duplicados resueltos: usa `claude-seo:seo-audit` (no la de marketing-skills), `seo-schema` (no `schema`), `seo-geo` (no `ai-seo`). No uses `seo-programmatic` ni `programmatic-seo`. Las recomendaciones de "Verified Partners" de marketing-skills no se siguen sin evaluación del Director.
+Duplicados resueltos: usa `claude-seo:seo-audit` (no la de marketing-skills), `seo-schema` (no `schema`), `seo-geo` (no `ai-seo` ni `seo-agentic`). Retiradas por no usarse: `sms` (el canal es WhatsApp y correo). Toda skill externa nueva o actualizada pasa antes por el escaneo de seguridad de `quality-reviewer` (D-029). No uses `seo-programmatic` ni `programmatic-seo`. Las recomendaciones de "Verified Partners" de marketing-skills no se siguen sin evaluación del Director.
 
 ## 7. Nuevas capacidades
 
