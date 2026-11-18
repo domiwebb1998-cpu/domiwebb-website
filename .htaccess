@@ -1,0 +1,29 @@
+# Domiwebb · sitio estático (oct-2026)
+Options -Indexes
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  # Páginas por defecto de Hostinger, sitio anterior y carpetas de respaldo: ya no existen (410).
+  RewriteRule ^(default\.php|default\.php\.old\.php)$ - [G,L]
+  RewriteRule ^(demo|domiwebb|respaldo-sitio-anterior|assets\.8532|\.builds)(/.*)?$ - [G,L]
+  RewriteRule ^(image2\.png|favicon\.png)$ /assets/logo-mark.svg [R=301,L]
+</IfModule>
+
+ErrorDocument 410 /404.html
+
+<IfModule mod_headers.c>
+  Header unset X-Powered-By
+  Header set Cache-Control "public, max-age=3600"
+  <If "%{REQUEST_URI} =~ m#^/assets/.*$#">
+    Header set Cache-Control "public, max-age=604800"
+  </If>
+  <If "%{REQUEST_URI} =~ m#^/ads\.txt$#">
+    Header set Cache-Control "public, max-age=3600"
+  </If>
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType text/plain .txt
+</IfModule>
