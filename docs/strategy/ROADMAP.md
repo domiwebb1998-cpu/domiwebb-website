@@ -11,4 +11,4 @@
 | 7. Automatización | GitHub Actions diaria/semanal con tope de coste | L10 presupuesto de API | Pendiente |
 | 8. Optimización | Medir impacto, podar agentes y skills sin uso | — | Pendiente |
 
-Bloqueo transversal: DW-001 (código del sitio importado desde Hostinger).
+DW-001 (importación del sitio) en validación en PR #2.

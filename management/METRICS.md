@@ -18,7 +18,7 @@ Regla: sin línea base no hay comparación. Ningún cambio se atribuye a una mej
 ## Desempeño del Director
 | Periodo | Problemas detectados | Resueltos | % verificados | Tiempo medio de resolución | Bloqueadas | Sin resultado |
 |---|---|---|---|---|---|---|
-| 2026-11-18 | 12 (DW-001 a DW-012) | 0 | — | — | 1 (DW-001) | — |
+| 2026-11-18 | 13 (DW-001 a DW-013) | 0 | — | — | 0 | — |
 
 ## Agentes
 | Agente | Tareas | Aceptadas a la primera | Rechazadas | Rondas promedio |

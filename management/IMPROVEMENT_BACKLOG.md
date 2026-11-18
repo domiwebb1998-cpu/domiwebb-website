@@ -4,7 +4,7 @@ Formato de contrato: `.claude/skills/continuous-improvement/SKILL.md`. Creado: 2
 
 | ID | Acción | Prioridad | Responsable | Dependencias | Estado | Criterios de aceptación |
 |---|---|---|---|---|---|---|
-| DW-001 | Importar el código actual del sitio desde Hostinger | P1 | Dirección humana + web-developer | — | Bloqueada (esperando zip de public_html) | El repo contiene los archivos servidos hoy; las 18 URL del sitemap y /assets coinciden con producción |
+| DW-001 | Importar el código actual del sitio desde Hostinger | P1 | Dirección humana + web-developer | — | En validación (PR #2) | El repo contiene los archivos servidos hoy; las 18 URL del sitemap y /assets coinciden con producción |
 | DW-002 | Configuración del ecosistema (CLAUDE.md, agentes, settings, management) | P1 | Director | L2 aprobada | En validación (PR) | PR abierto; settings.json válido; deny bloquea push a main; quality-reviewer aprueba |
 | DW-003 | Plan de medición: eventos whatsapp_click, calculator_use, quiz_complete, form_submit | P1 | analytics-specialist | DW-001 | Aprobada | Documento en docs/analytics/ con eventos, disparadores, parámetros y verificación |
 | DW-004 | Instalar GA4 y actualizar política de cookies | P1 | web-developer | DW-003, L5 | Propuesta | Eventos visibles en GA4 DebugView; política de cookies menciona GA4; quality-reviewer valida |
@@ -15,6 +15,7 @@ Formato de contrato: `.claude/skills/continuous-improvement/SKILL.md`. Creado: 2
 | DW-009 | Recoger 3 testimonios o casos reales con permiso | P2 | Dirección humana + marketing-specialist | — | Propuesta | Textos aprobados por cada cliente |
 | DW-010 | Revisión de la publicación automática de Pyme al Día | P2 | Director + quality-reviewer | L7, L8 | Propuesta | Nuevas guías llegan por PR y pasan validación |
 | DW-011 | Ampliar schema (Perfil de Empresa, horario) y crear llms.txt | P3 | seo-specialist → web-developer | DW-001 | Aprobada | Validador sin errores; /llms.txt responde 200 |
+| DW-013 | Limpiar del servidor los restos del sitio anterior (.builds con node_modules, assets.8532, demo, respaldos, default.php) | P3 | Dirección humana | Aprobación de borrado | Propuesta | Las rutas siguen devolviendo 410 y ya no existen en public_html; copia de respaldo descargada antes |
 | DW-012 | Texto alt en imágenes no decorativas | P3 | web-developer | DW-001 | Aprobada | Lighthouse accesibilidad sin avisos de alt |
 
 ## Contratos
@@ -31,7 +32,8 @@ Formato de contrato: `.claude/skills/continuous-improvement/SKILL.md`. Creado: 2
 - Criterios de aceptación:
   - [ ] El repo contiene los archivos servidos hoy; las 18 URL del sitemap y /assets coinciden con producción
 - Dependencias / aprobación humana: —
-- Estado: Bloqueada (esperando zip de public_html)
+- Estado: En validación (PR #2)
+- Evidencia final: 46 archivos activos coinciden por SHA-256 con producción (2026-11-18)
 - Evidencia final: —
 - Responsable de validación: quality-reviewer
 - Decisión del Director: —
@@ -219,6 +221,24 @@ Formato de contrato: `.claude/skills/continuous-improvement/SKILL.md`. Creado: 2
   - [ ] Lighthouse accesibilidad sin avisos de alt
 - Dependencias / aprobación humana: DW-001
 - Estado: Aprobada
+- Evidencia final: —
+- Responsable de validación: quality-reviewer
+- Decisión del Director: —
+
+### DW-013 — Limpiar del servidor los restos del sitio anterior
+- Objetivo: reducir superficie y peso del hosting.
+- Problema u oportunidad: public_html conserva ~137 MB del proyecto Hostinger Horizons (.builds con node_modules) y bundles antiguos con IDs de EmailJS; .htaccess ya los responde 410.
+- Responsable: Dirección humana (borrar en producción)
+- Prioridad: P3
+- Fecha de creación: 2026-11-18
+- Alcance: solo rutas listadas en el README; nada del sitio activo.
+- Evidencia inicial: zip de public_html del 2026-11-18.
+- Resultado esperado: rutas eliminadas tras guardar respaldo.
+- Criterios de aceptación:
+  - [ ] Respaldo descargado antes de borrar
+  - [ ] Las rutas siguen devolviendo 410 o 404
+- Dependencias / aprobación humana: borrado en producción
+- Estado: Propuesta
 - Evidencia final: —
 - Responsable de validación: quality-reviewer
 - Decisión del Director: —
