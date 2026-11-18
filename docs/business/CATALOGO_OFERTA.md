@@ -15,11 +15,11 @@ No vendemos páginas web. Creamos herramientas para que los negocios crezcan, se
 | Incluye | Diseño por nicho, botón de WhatsApp, SEO básico, hosting + dominio, SSL, soporte | Publicado en el sitio |
 | Modelo de pago | Pago inicial + mensualidad | Publicado en el sitio |
 | Valor del pago inicial | Profesional $490.000 · Crecimiento $890.000 · Presencia $290.000 | Aprobado 2026-11-18 |
-| Valor de la mensualidad | Profesional $129.000 · Crecimiento $229.000 (Aprobado) · Presencia $89.000 (pendiente de confirmar) | Aprobado parcial 2026-11-18 |
+| Valor de la mensualidad | Presencia $89.000 · Profesional $129.000 · Crecimiento $229.000 | Aprobado 2026-11-18 |
 | Niveles | Presencia / Profesional / Crecimiento; qué incluye cada uno en `docs/marketing/PROPUESTA_PRECIOS_WAAS.md` | Aprobado 2026-11-18 |
 | IVA | Domiwebb no es responsable de IVA: precios finales | Confirmado por la dirección |
 | Medio de pago | Transferencia directa | Confirmado por la dirección |
-| Permanencia mínima, cambios incluidos por mes, qué pasa si cancela (dominio, contenido) | Propuesta en el mismo documento | PENDIENTE DE VALIDACIÓN |
+| Permanencia mínima, cambios incluidos por mes, qué pasa si cancela (dominio, contenido) | 6 meses de permanencia; dominio a nombre del cliente; copia del sitio por 2 mensualidades; pago anual = 2 meses gratis; pausa a los 15 días de mora; cambio extra $40.000 (detalle en `docs/marketing/PROPUESTA_PRECIOS_WAAS.md`) | Aprobado 2026-11-18 |
 | Nichos con plantilla lista | — | PENDIENTE (ver `docs/marketing/NICHOS.md` cuando exista) |
 
 ## 2. Sistemas y automatización

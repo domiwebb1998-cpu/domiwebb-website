@@ -12,3 +12,4 @@
 | 2026-11-18 | DW-018 | En validación (PR) | Pendiente quality-reviewer y aprobación de la dirección | 8 agentes ampliados a todo el negocio, 3 nuevos (D-022 a D-024), 3 comandos, playbook, catálogo, entrega WAAS, reglas de conectores |
 | 2026-11-18 | DW-019 | Cerrada | Director | Base Notion 14 · CLIENTES Y ENTREGAS creada; CRM_NOTION.md actualizado |
 | 2026-11-18 | DW-020 | En validación | Pendiente de la dirección | Propuesta de 3 planes con referencias de 5 competidores |
+| 2026-11-18 | DW-020 | Cerrada | Domiwebb (dirección) | Precios aprobados (D-027); Notion 13 · OFERTA Y PRECIOS actualizada |

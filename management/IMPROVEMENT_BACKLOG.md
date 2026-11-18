@@ -23,7 +23,7 @@ Formato de contrato: `.claude/skills/continuous-improvement/SKILL.md`. Creado: 2
 | DW-012 | Texto alt en imágenes no decorativas | P3 | web-developer | DW-001 | Cerrada sin cambios | Lighthouse accesibilidad sin avisos de alt |
 | DW-018 | Ampliar el ecosistema de agentes a todo el negocio (8 reestructurados + 3 nuevos, comandos, playbook, catálogo, entrega WAAS) | P1 | Director | — | En validación (PR) | Cada agente cubre su área de negocio sin duplicados; 3 nuevos justificados en DECISIONS_LOG; settings.json válido con ask para envíos/publicaciones; quality-reviewer aprueba; dirección aprueba la fusión |
 | DW-019 | Crear el CRM en Notion (bases "Prospectos y clientes" y "Entregas y renovaciones") | P1 | sales-manager + operations-finance | DW-018, aprobación de la estructura | Cerrada 2026-11-18: prospectos siguen en el Pipeline comercial; creada Notion "14 · CLIENTES Y ENTREGAS" (D-026) | Bases creadas según docs/business/CRM_NOTION.md; clientes actuales cargados por la dirección; ningún dato personal en el repo |
-| DW-020 | Definir precios y condiciones WAAS (pago inicial, mensualidad, niveles, permanencia, cancelación) | P1 | marketing-specialist → dirección humana | Comparativo de competencia (market-researcher) | En validación: propuesta en docs/marketing/PROPUESTA_PRECIOS_WAAS.md, espera aprobación de la dirección | CATALOGO_OFERTA.md con valores marcados Aprobado por la dirección |
+| DW-020 | Definir precios y condiciones WAAS (pago inicial, mensualidad, niveles, permanencia, cancelación) | P1 | marketing-specialist → dirección humana | Comparativo de competencia (market-researcher) | Cerrada 2026-11-18: precios y condiciones aprobados; publicados en Notion 13 · OFERTA Y PRECIOS (D-027) | CATALOGO_OFERTA.md con valores marcados Aprobado por la dirección |
 | DW-021 | Elegir 3 nichos prioritarios y preparar sus plantillas WAAS | P1 | market-researcher + marketing-specialist → web-developer | DW-020 | Propuesta | docs/marketing/NICHOS.md con criterios y fuentes; 3 plantillas en rama que pasan la checklist de ENTREGA_WAAS.md |
 | DW-022 | Biblioteca de consultoría: diagnóstico administrativo, plantilla de flujo de caja, kit Ley 1581, guía de facturación electrónica | P2 | business-consultant | Aliado abogado/contador (PENDIENTE) | Propuesta | 4 plantillas en docs/consultoria/ con advertencia y fuentes oficiales con fecha; quality-reviewer aprueba |
 | DW-023 | Calendario de cobros, mensualidades y renovaciones de dominios/hosting | P1 | operations-finance | DW-019 | Propuesta | Todos los clientes activos con día de cobro y vencimientos; alerta 30 días antes de cada vencimiento |
@@ -301,7 +301,7 @@ Formato de contrato: `.claude/skills/continuous-improvement/SKILL.md`. Creado: 2
 - Criterios de aceptación:
   - [ ] CATALOGO_OFERTA.md con valores marcados Aprobado por la dirección
 - Dependencias / aprobación humana: Comparativo de competencia (market-researcher)
-- Estado: En validación
+- Estado: Cerrada
 - Evidencia final: docs/marketing/PROPUESTA_PRECIOS_WAAS.md
 - Responsable de validación: quality-reviewer
 - Decisión del Director: —

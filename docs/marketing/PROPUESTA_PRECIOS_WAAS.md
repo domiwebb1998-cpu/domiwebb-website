@@ -1,6 +1,6 @@
 # Propuesta de precios WAAS (DW-020)
 
-Estado (2026-11-18, 14:05): **Profesional y Crecimiento aprobados por la dirección. Presencia: entrada $290.000 aprobada; mensualidad ajustada a $89.000 por el costo del dominio, pendiente de confirmación. Condiciones: pendientes de confirmación.** Ningún agente usa estas cifras en mensajes, propuestas ni contenido hasta que `CATALOGO_OFERTA.md` y la página de Notion "13 · OFERTA Y PRECIOS" las marquen como aprobadas.
+Estado (2026-11-18, 14:05): **APROBADA por la dirección el 2026-11-18** (Presencia con mensualidad de $89.000 y condiciones confirmadas a las 14:07). Ningún agente usa estas cifras en mensajes, propuestas ni contenido hasta que `CATALOGO_OFERTA.md` y la página de Notion "13 · OFERTA Y PRECIOS" las marquen como aprobadas.
 Preparada: 2026-11-18 por el Director (marketing-specialist + market-researcher).
 
 ## A quién le vendemos hoy (verificado)
