@@ -16,6 +16,7 @@ Alcance ampliado a todo el negocio el 2026-11-18 (D-021). Los nombres de archivo
 | Operación | Operaciones y Finanzas Internas | `.claude/agents/operations-finance.md` | Read, Grep, Glob, Write, Edit, Notion, Calendar (lectura), Drive, Gmail (lectura + borradores) | — | **Nuevo** (D-024) | 2026-11-18 |
 | Control | Analítica e Indicadores del Negocio | `.claude/agents/analytics-specialist.md` | Read, Grep, Glob, Bash, Write, Metricool (lectura), Notion (lectura) | analytics, seo-google | Activo (ampliado; sin credenciales GA4 de lectura) | 2026-11-18 |
 | Control | Calidad, Seguridad y Cumplimiento | `.claude/agents/quality-reviewer.md` | Read, Grep, Glob, Bash, WebFetch | seo-drift, seo-page, /code-review, /security-review | Activo (ampliado) | 2026-11-18 |
+| Mejora continua | Investigador de Mejoras (GitHub) | `.claude/agents/trend-researcher.md` + `/investigar-mejoras` + rutina quincenal "DOMIWEBB · 13" | Read, Grep, Glob, WebSearch, WebFetch, Bash (solo `gh api` de búsqueda y lectura), Write; Notion (informe) | — (método en `docs/operations/INVESTIGADOR_GITHUB.md`) | **Nuevo** (D-028); rutina PENDIENTE de activar | 2026-11-18 |
 
 ## Candidatos evaluados y no creados
 | Candidato | Motivo para no crearlo |
