@@ -55,3 +55,7 @@ Comparten la verdad en: Pipeline comercial (prospectos), Notion 13 · OFERTA Y P
 | Respuestas | El dueño toca "💬 Respondió" | El Director las lee en Gmail cada mañana: pasa a Conversación, a Cerrado si acepta (y avisa con 🎉) o a Descartado con `noContactar` si responde NO |
 
 Reglas comunes (Ley 2300 de 2023 y Ley 1581 de 2012): lunes a viernes de 7 a. m. a 7 p. m., sábados de 8 a. m. a 3 p. m., nunca domingos ni festivos (el Pipeline bloquea los botones fuera de horario); un mensaje por semana por negocio sumando los dos canales; cada correo lleva la línea "responde NO"; los correos y datos de contacto viven solo en el Pipeline, nunca en este repositorio ni en Notion.
+
+## Instagram: solo acercamiento a quien interactúa (D-035)
+
+Desde el 2026-11-18 no se envían mensajes en frío por Instagram. `tools/ig-avisos/` (cron en Hostinger cada 15 minutos) envía un correo por cada comentario, mensaje directo o etiqueta nueva. El 09 Director comercial lee esos correos cada mañana, crea el lead con origen "contenido" y deja la respuesta en la cola "📸 Enviar Instagram". Los leads de prospección sin correo esperan a que el 10 Prospección encuentre su correo público. Quién dio like no se puede saber (Instagram solo entrega el número).

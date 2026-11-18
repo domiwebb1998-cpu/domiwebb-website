@@ -19,3 +19,4 @@
 | 2026-11-18 | DW-027 | Cerrada | Director | Revisión del dueño: ninguna rutina muestra Canva en pantalla. La configuración interna conserva la referencia vencida, sin efecto: ningún paso usa Canva |
 | 2026-11-18 | D-033 | Cerrada | Domiwebb (dirección) | Cadena de agentes corregida: Radar, Copywriter, 09 Director comercial, Auditor; 14 ideas cerradas como Producida; docs/operations/SISTEMA_AGENTES.md |
 | 2026-11-18 | D-034 | Cerrada | Domiwebb (dirección) | Pipeline: botones "📸 Enviar Instagram" y "✉️ Enviar correos del día"; 10 Prospección captura correos públicos; 09 Director prepara correos y lee respuestas en Gmail |
+| 2026-11-18 | D-035 | En validación (PR) | Pendiente instalación en Hostinger por la dirección | Avisos de Instagram por correo (comentarios, DMs, etiquetas); Director crea leads desde los avisos; sin DMs en frío |
