@@ -19,7 +19,26 @@
       "Bash(git merge:*)",
       "Bash(curl:*)",
       "Bash(npm install:*)",
-      "Bash(pip install:*)"
+      "Bash(pip install:*)",
+      "mcp__Gmail__send_message",
+      "mcp__Gmail__reply",
+      "mcp__Gmail__forward",
+      "mcp__Gmail__trash_message",
+      "mcp__Gmail__trash_thread",
+      "mcp__Google_Calendar__create_event",
+      "mcp__Google_Calendar__update_event",
+      "mcp__Google_Calendar__delete_event",
+      "mcp__Google_Calendar__respond_to_event",
+      "mcp__Google_Drive__share_file",
+      "mcp__Google_Drive__trash_file",
+      "mcp__Metricool_Social_Media_Management__createScheduledPost",
+      "mcp__Metricool_Social_Media_Management__updateScheduledPost",
+      "mcp__Metricool_Social_Media_Management__sendScheduledPostForReview",
+      "mcp__Hostinger_Connector__execute",
+      "mcp__Hostinger_Connector__multi-execute",
+      "mcp__Notion__notion-delete-pages",
+      "mcp__Notion__notion-delete-databases",
+      "mcp__Notion__notion-move-pages"
     ]
   }
 }

@@ -19,6 +19,12 @@ Fuente completa y mantenida: `docs/business/DOMIWEBB_MASTER_CONTEXT.md`. Este re
 - **Canal de contacto:** WhatsApp +57 300 941 3721. Instagram `domiwebb_tusitio`, TikTok `@domiwebb3`.
 - **Público:** pymes, emprendedores, restaurantes, inmobiliarias, profesionales independientes, abogados, clínicas, comercios.
 
+## Documentos de negocio
+
+- Oferta y precios aprobados: `docs/business/CATALOGO_OFERTA.md` (si un valor no dice "Aprobado", no se usa).
+- Flujo y tono de venta WAAS: `docs/business/PLAYBOOK_VENTAS.md`.
+- Entrega de páginas de clientes: `docs/operations/ENTREGA_WAAS.md`.
+
 ## Pendiente de validación (no afirmar)
 
 - Precios concretos (el sitio no los publica).
