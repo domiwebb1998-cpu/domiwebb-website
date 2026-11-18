@@ -13,7 +13,7 @@ Alcance ampliado a todo el negocio el 2026-11-18 (D-021). Los nombres de archivo
 | Ventas | Ventas y Gestión de Clientes | `.claude/agents/sales-manager.md` | Read, Grep, Glob, Write, Notion (CRM), Gmail (lectura + borradores), Calendar (lectura), Drive | Playbook de ventas | **Nuevo** (D-022) | 2026-11-18 |
 | Entrega | Ingeniería Web, Entrega WAAS y Automatización | `.claude/agents/web-developer.md` | Read, Grep, Glob, Edit, Write, Bash | seo-page | Activo (ampliado) | 2026-11-18 |
 | Entrega | Consultoría Empresarial | `.claude/agents/business-consultant.md` | Read, Grep, Glob, WebSearch, WebFetch, Write, Edit, Drive | — | **Nuevo** (D-023) | 2026-11-18 |
-| Operación | Operaciones y Finanzas Internas | `.claude/agents/operations-finance.md` | Read, Grep, Glob, Write, Edit, Notion, Calendar (lectura), Drive, Gmail (lectura + borradores), Hostinger (búsqueda) | — | **Nuevo** (D-024) | 2026-11-18 |
+| Operación | Operaciones y Finanzas Internas | `.claude/agents/operations-finance.md` | Read, Grep, Glob, Write, Edit, Notion, Calendar (lectura), Drive, Gmail (lectura + borradores) | — | **Nuevo** (D-024) | 2026-11-18 |
 | Control | Analítica e Indicadores del Negocio | `.claude/agents/analytics-specialist.md` | Read, Grep, Glob, Bash, Write, Metricool (lectura), Notion (lectura) | analytics, seo-google | Activo (ampliado; sin credenciales GA4 de lectura) | 2026-11-18 |
 | Control | Calidad, Seguridad y Cumplimiento | `.claude/agents/quality-reviewer.md` | Read, Grep, Glob, Bash, WebFetch | seo-drift, seo-page, /code-review, /security-review | Activo (ampliado) | 2026-11-18 |
 

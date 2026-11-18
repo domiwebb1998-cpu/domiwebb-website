@@ -34,7 +34,7 @@ Leyenda: Sí = sin autorización adicional · Rama = solo en rama de trabajo · 
 | Borrar archivos o datos | Humano | No | No | No | No | No | No | No | No | No | No | No |
 | Comandos destructivos | No | No | No | No | No | No | No | No | No | No | No | No |
 
-La parte técnica se refuerza con `.claude/settings.json` (deny/ask, incluidas las acciones de envío, publicación y borrado de los conectores) y con la lista `tools` de cada agente. Los nombres de las herramientas de los conectores pueden variar según dónde se ejecute Claude Code (ver DW-018).
+La parte técnica se refuerza con `.claude/settings.json` (deny/ask, incluidas las acciones de envío, publicación y borrado de los conectores) y con la lista `tools` de cada agente. Los nombres de las herramientas de los conectores pueden variar según dónde se ejecute Claude Code (ver DW-025).
 
 ## Cadencias
 - Por tarea: contrato completo, evidencia, validación independiente.

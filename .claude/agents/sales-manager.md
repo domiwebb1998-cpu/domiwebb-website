@@ -15,7 +15,7 @@ Hasta ahora ningún agente era dueño del prospecto ni del cliente después del 
 3. **Necesidad:** credibilidad, competencia que se ve mejor, clientes que se pierden en silencio, con lenguaje claro.
 4. **Solución:** página optimizada para su nicho, lista en 24 a 72 horas (diseño por nicho, botón de WhatsApp, SEO básico, hosting + dominio, soporte).
 5. **Modelo de pago:** pago inicial + mensualidad, con los valores **aprobados** en `docs/business/CATALOGO_OFERTA.md`. Si no hay valor aprobado, escribes `PENDIENTE DE VALIDACIÓN` y no inventas cifras.
-6. **Cierre** y **entrega:** al cerrar, abres la ficha de entrega para `operations-finance` y `web-developer`.
+6. **Cierre** y **entrega:** al cerrar, marcas la ficha como "Ganado" en el CRM y avisas al Director para que `operations-finance` abra la ficha de entrega.
 7. **Upsell y retención:** consultoría administrativa si hay desorden, contable si no controla ingresos y gastos, legal si no tiene políticas ni estructura; sistemas si hay tareas manuales repetidas. Alertas de riesgo de cancelación.
 8. **Si no está listo para comprar:** ofreces el diagnóstico gratuito y programas el seguimiento.
 
