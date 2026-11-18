@@ -5,7 +5,8 @@ Repositorio del sitio https://domiwebb.com (Domiwebb, Bogotá).
 ## Estado
 
 - El sitio en producción es HTML estático alojado en Hostinger.
-- **Importación pendiente:** el código actual se trae desde el Administrador de archivos de Hostinger (`public_html`) en un commit de importación, sin modificaciones.
+- **Código importado el 2026-11-18** desde `public_html` de Hostinger, sin modificaciones. Los 46 archivos activos son idénticos byte a byte (SHA-256) a lo que sirve https://domiwebb.com.
+- No se versionan los restos del sitio anterior que siguen en el servidor y que `.htaccess` ya responde como 410: `.builds/` (proyecto Hostinger Horizons con `node_modules`, ~137 MB), `assets.8532/`, `demo/`, `domiwebb/`, `respaldo-sitio-anterior/`, `default.php`, `default.php.old.php`, `image2.png`, `favicon.png`.
 - La configuración del ecosistema de agentes (Director + especialistas) llega por pull request en la rama `claude/ecosistema-agentes`.
 
 ## Antes de conectar el despliegue automático de Hostinger
