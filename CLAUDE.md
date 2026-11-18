@@ -152,6 +152,7 @@ Claude Projects (estrategia) y Claude Code (ejecución) no comparten memoria: co
 - `docs/business/DOMIWEBB_MASTER_CONTEXT.md`
 - `docs/business/CATALOGO_OFERTA.md` y `docs/business/PLAYBOOK_VENTAS.md`
 - `docs/operations/ENTREGA_WAAS.md`
+- `docs/operations/SISTEMA_AGENTES.md` (quién orquesta: tareas automáticas, 09 Director comercial y 11 Auditor)
 - `docs/strategy/OPERATING_MODEL.md`
 - `docs/strategy/ROADMAP.md`
 - `management/AGENT_REGISTRY.md`
