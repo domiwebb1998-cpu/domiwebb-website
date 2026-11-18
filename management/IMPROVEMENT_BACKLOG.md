@@ -19,6 +19,7 @@ Formato de contrato: `.claude/skills/continuous-improvement/SKILL.md`. Creado: 2
 | DW-014 | Quitar los metadatos C2PA de los SVG (iconos en línea y assets/icons) | P1 | web-developer | — | En validación (PR aligerar SVG) | Sin `c2pa` en el sitio; capturas antes/después idénticas píxel a píxel; portada < 40 KB |
 | DW-015 | Conseguir que Google indexe las 17 páginas "descubiertas, sin indexar" | P1 | seo-specialist | DW-014 | En curso: sitemap reenviado e indexación solicitada para paginas-web, sistemas-y-automatizacion y consultoria-empresarial (2026-11-18) | ≥ 10 de 18 URL del sitemap indexadas en Search Console |
 | DW-016 | Línea base de PageSpeed (móvil y escritorio) de 4 páginas clave | P2 | analytics-specialist | — | Bloqueada hoy por cuota de la API; reintentar | Puntuaciones y LCP/CLS/TBT registrados en METRICS.md |
+| DW-017 | Supervisión programada: salud diaria gratis + auditoría semanal con IA con topes | P2 | web-developer | L10 (clave y presupuesto para la parte con IA) | Validada (PR #7, aprobada con observaciones); falta fusionar y primera ejecución manual | Chequeo diario pasa contra producción y abre/cierra alertas; auditoría no corre sin secreto e interruptor; solo cambia management/; guía con costo y pasos de activación |
 | DW-012 | Texto alt en imágenes no decorativas | P3 | web-developer | DW-001 | Cerrada sin cambios | Lighthouse accesibilidad sin avisos de alt |
 
 ## Contratos
