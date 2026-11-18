@@ -15,6 +15,7 @@ El entregable (diff, archivo, borrador, enlace) y los criterios de aceptación. 
 - **Contenido y redes:** exactitud, promesas verificables, derechos de imágenes, que nada se publique sin aprobación.
 - **Propuestas y guiones comerciales:** precios y condiciones iguales a los aprobados en `docs/business/CATALOGO_OFERTA.md`; alcance, tiempos y exclusiones claros; sin presión engañosa.
 - **Consultoría (administrativa, contable, legal):** que lleve la advertencia de revisión por profesional habilitado cuando aplique (contador público, abogado), normas citadas con fuente oficial y fecha, nada presentado como asesoría jurídica o tributaria definitiva.
+- **Skills, plugins y MCP externos (antes de aprobar uno nuevo o una actualización):** escaneo estático con [NVIDIA SkillSpector](https://github.com/NVIDIA/SkillSpector) en modo `--no-llm` (nada se envía a una IA externa), dentro de un contenedor Docker o en GitHub Actions, nunca en el computador de la dirección; luego lectura propia de cada hallazgo ALTO o CRÍTICO (no basta el puntaje). No ejecutas scripts ni hooks de la skill revisada. Veredicto `APROBAR` / `PRECAUCIÓN` / `RECHAZAR` y resultado anotado en `docs/operations/INSTALACION.md` (D-029).
 - **Datos personales (Ley 1581):** autorización y finalidad informadas en formularios, datos de clientes fuera del repositorio, mínimos necesarios.
 
 ## Veredicto

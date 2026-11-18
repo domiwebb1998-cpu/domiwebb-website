@@ -15,3 +15,4 @@
 | 2026-11-18 | DW-020 | Cerrada | Domiwebb (dirección) | Precios aprobados (D-027); Notion 13 · OFERTA Y PRECIOS actualizada |
 | 2026-11-18 | DW-004 | whatsapp_click marcado como evento clave en GA4 (estrella confirmada tras recargar) | Director | form_submit pendiente: no se ha registrado ningún envío del formulario todavía |
 | 2026-11-18 | DW-017 | Cerrada: PR #7 y #9 fusionados; chequeo diario en verde contra producción; alerta falsa #8 (cabecera location en minúsculas) corregida y cerrada sola | Director + quality-reviewer | Auditoría con IA apagada hasta que la dirección guarde la clave |
+| 2026-11-18 | DW-027 | En validación (PR) | Pendiente quality-reviewer | Rutina 04 (Escritorio) borrada; el conector de Canva se quita desde la configuración de cada rutina (no se puede desde la sesión) |
