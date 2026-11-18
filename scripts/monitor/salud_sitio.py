@@ -35,21 +35,26 @@ class SinRedireccion(urllib.request.HTTPRedirectHandler):
         return None
 
 
+def _cab(headers):
+    # El servidor puede enviar "location" en minúsculas: se normalizan los nombres.
+    return {k.lower(): v for k, v in (headers or {}).items()}
+
+
 def pedir(url, seguir=True, timeout=20):
-    """Devuelve (status, headers, body_bytes, segundos, url_final)."""
+    """Devuelve (status, headers, body_bytes, segundos, url_final). Cabeceras en minúsculas."""
     opener = urllib.request.build_opener() if seguir else urllib.request.build_opener(SinRedireccion)
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Cache-Control": "no-cache"})
     t0 = time.monotonic()
     try:
         with opener.open(req, timeout=timeout) as r:
             body = r.read()
-            return r.status, dict(r.headers), body, time.monotonic() - t0, r.geturl()
+            return r.status, _cab(r.headers), body, time.monotonic() - t0, r.geturl()
     except urllib.error.HTTPError as e:
-        return e.code, dict(e.headers or {}), e.read() if e.fp else b"", time.monotonic() - t0, url
+        return e.code, _cab(e.headers), e.read() if e.fp else b"", time.monotonic() - t0, url
     except (urllib.error.URLError, OSError, http.client.HTTPException) as e:
         # Sin conexión, DNS, tiempo agotado o SSL: status 0 para que el informe lo registre.
         motivo = getattr(e, "reason", e)
-        return 0, {"X-Error": str(motivo)[:200]}, b"", time.monotonic() - t0, url
+        return 0, {"x-error": str(motivo)[:200]}, b"", time.monotonic() - t0, url
 
 
 def dias_ssl(host):
@@ -78,7 +83,7 @@ def main():
     st, h, body, _, _ = pedir(base + "/sitemap.xml")
     urls = []
     if st != 200:
-        criticos.append(f"sitemap.xml responde {st or 'sin conexión: ' + h.get('X-Error', '')}")
+        criticos.append(f"sitemap.xml responde {st or 'sin conexión: ' + h.get('x-error', '')}")
     else:
         ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
         try:
@@ -132,11 +137,11 @@ def main():
     # 4. Redirecciones y certificado (solo en producción)
     if not a.sin_redirecciones:
         st, h, _, _, _ = pedir(f"https://www.{host}/blog.html", seguir=False)
-        loc = h.get("Location", "")
+        loc = h.get("location", "")
         if st != 301 or not loc.startswith(f"https://{host}/blog.html"):
             criticos.append(f"www no redirige con 301 a https://{host} (status {st}, Location {loc or '—'})")
         st, h, _, _, _ = pedir(f"http://{host}/", seguir=False)
-        if st not in (301, 302, 307, 308) or not h.get("Location", "").startswith("https://"):
+        if st not in (301, 302, 307, 308) or not h.get("location", "").startswith("https://"):
             criticos.append(f"http no redirige a https (status {st})")
         try:
             d = dias_ssl(host)
