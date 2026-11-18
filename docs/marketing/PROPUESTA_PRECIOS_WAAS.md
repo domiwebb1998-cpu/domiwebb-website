@@ -1,6 +1,6 @@
 # Propuesta de precios WAAS (DW-020)
 
-Estado: **PROPUESTA, pendiente de aprobación de la dirección.** Ningún agente usa estas cifras en mensajes, propuestas ni contenido hasta que `CATALOGO_OFERTA.md` y la página de Notion "13 · OFERTA Y PRECIOS" las marquen como aprobadas.
+Estado (2026-11-18, 14:05): **Profesional y Crecimiento aprobados por la dirección. Presencia: entrada $290.000 aprobada; mensualidad ajustada a $89.000 por el costo del dominio, pendiente de confirmación. Condiciones: pendientes de confirmación.** Ningún agente usa estas cifras en mensajes, propuestas ni contenido hasta que `CATALOGO_OFERTA.md` y la página de Notion "13 · OFERTA Y PRECIOS" las marquen como aprobadas.
 Preparada: 2026-11-18 por el Director (marketing-specialist + market-researcher).
 
 ## A quién le vendemos hoy (verificado)
@@ -22,7 +22,7 @@ Lectura: nadie en este rango ofrece entrega en 24-72 h; la mayoría entrega en 2
 |---|---|---|---|
 | Para quién | Negocio local que hoy solo tiene Instagram/WhatsApp | Pyme o negocio que quiere verse más serio que su competencia | Negocio que quiere más clientes cada mes desde Google |
 | Pago inicial | **$290.000** | **$490.000** | **$890.000** |
-| Mensualidad | **$79.000** | **$129.000** | **$229.000** |
+| Mensualidad | **$89.000** (antes $79.000) | **$129.000** | **$229.000** |
 | Sitio | Una página por nicho (servicios, galería, ubicación, horarios) | Hasta 5 secciones | Hasta 8 secciones + catálogo de productos o servicios |
 | Entrega | 24-72 h desde insumos completos | 24-72 h desde insumos completos | 3 a 5 días hábiles desde insumos completos |
 | WhatsApp, SSL, hosting, dominio .com o .com.co | Sí | Sí | Sí |
@@ -31,7 +31,7 @@ Lectura: nadie en este rango ofrece entrega en 24-72 h; la mayoría entrega en 2
 | GA4 + Search Console | — | Sí | Sí, con informe mensual |
 | Cambios de contenido al mes | 1 | 3 | 6 + SEO local continuo |
 | Soporte | WhatsApp, 48 h hábiles | WhatsApp, 24 h hábiles | Prioritario + revisión mensual de 30 min |
-| Primer año (inicial + 12 cuotas) | $1.238.000 | $2.038.000 | $3.638.000 |
+| Primer año (inicial + 12 cuotas) | $1.358.000 | $2.038.000 | $3.638.000 |
 
 ### Condiciones propuestas
 1. **Permanencia mínima de 6 meses** (recupera el costo de montar el sitio y el dominio). Después, cancelación con 30 días de aviso.
@@ -44,5 +44,8 @@ Lectura: nadie en este rango ofrece entrega en 24-72 h; la mayoría entrega en 2
 
 ### Pendiente antes de aprobar (no lo invento)
 - **Costos reales de Domiwebb por cliente** (hosting por sitio en Hostinger, dominio, horas de entrega y soporte) para confirmar el margen. Lo calcula `operations-finance` cuando la dirección comparta el plan de Hostinger y el valor de su hora.
-- **IVA:** si Domiwebb es responsable de IVA, decidir si los precios lo incluyen.
-- Medios de pago (Nequi, Bancolombia, Wompi, etc.) y facturación electrónica.
+- **IVA:** Domiwebb no es responsable de IVA (dirección, 2026-11-18): los precios son finales.
+- **Medio de pago:** transferencia directa (dirección, 2026-11-18).
+
+## Ajuste de Presencia por el dominio
+El dominio cuesta hasta $80.000 al año (estimado de la dirección), unos $6.700 al mes. Con la cuota en $89.000 entran $120.000 más al año que con $79.000: cubre el dominio y deja margen para variaciones de precio. La entrada de $290.000 se mantiene.

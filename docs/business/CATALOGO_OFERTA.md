@@ -14,9 +14,11 @@ No vendemos páginas web. Creamos herramientas para que los negocios crezcan, se
 | Promesa | Página optimizada para el nicho del cliente, lista en 24 a 72 horas | Publicado en el sitio |
 | Incluye | Diseño por nicho, botón de WhatsApp, SEO básico, hosting + dominio, SSL, soporte | Publicado en el sitio |
 | Modelo de pago | Pago inicial + mensualidad | Publicado en el sitio |
-| Valor del pago inicial | Propuesta en `docs/marketing/PROPUESTA_PRECIOS_WAAS.md` | PENDIENTE DE VALIDACIÓN (propuesta 2026-11-18, no usar) |
-| Valor de la mensualidad | Propuesta en `docs/marketing/PROPUESTA_PRECIOS_WAAS.md` | PENDIENTE DE VALIDACIÓN (propuesta 2026-11-18, no usar) |
-| Niveles | Presencia / Profesional / Crecimiento (propuesta) | PENDIENTE DE VALIDACIÓN |
+| Valor del pago inicial | Profesional $490.000 · Crecimiento $890.000 · Presencia $290.000 | Aprobado 2026-11-18 |
+| Valor de la mensualidad | Profesional $129.000 · Crecimiento $229.000 (Aprobado) · Presencia $89.000 (pendiente de confirmar) | Aprobado parcial 2026-11-18 |
+| Niveles | Presencia / Profesional / Crecimiento; qué incluye cada uno en `docs/marketing/PROPUESTA_PRECIOS_WAAS.md` | Aprobado 2026-11-18 |
+| IVA | Domiwebb no es responsable de IVA: precios finales | Confirmado por la dirección |
+| Medio de pago | Transferencia directa | Confirmado por la dirección |
 | Permanencia mínima, cambios incluidos por mes, qué pasa si cancela (dominio, contenido) | Propuesta en el mismo documento | PENDIENTE DE VALIDACIÓN |
 | Nichos con plantilla lista | — | PENDIENTE (ver `docs/marketing/NICHOS.md` cuando exista) |
 
