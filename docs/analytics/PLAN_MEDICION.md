@@ -22,7 +22,7 @@ Las respuestas del diagnóstico (`sector`, `pain`, `has_web`) son opciones fijas
 ## Instalación (DW-004, requiere aprobación y datos de la dirección)
 1. ✅ Propiedad GA4 creada (2026-11-18): `G-FDCJZQGKFG`, zona horaria Colombia, moneda COP.
 2. ✅ Etiqueta gtag.js en el `<head>` de las 19 páginas (rama `claude/instalar-ga4`).
-3. Marcar `whatsapp_click` y `form_submit` como eventos clave en GA4.
+3. Marcar `whatsapp_click` y `form_submit` como eventos clave en GA4. Hecho para `whatsapp_click` (2026-11-18). `form_submit` aún no aparece en Eventos recientes porque nadie ha enviado el formulario; se marca en cuanto aparezca.
 4. Registrar como dimensiones personalizadas: `section`, `link_id`, `sector`, `pain`, `has_web`, `service`.
 5. ✅ Actualizar `politica-de-cookies.html` y `politica-de-privacidad.html` para mencionar Google Analytics (finalidad estadística, Ley 1581 de 2012).
 6. Verificar en DebugView que llegan los 4 eventos y que no llega ningún evento `click` con `link_url` que contenga `text=` (probar el botón "Abrir WhatsApp" del formulario).
