@@ -9,7 +9,7 @@ Formato de contrato: `.claude/skills/continuous-improvement/SKILL.md`. Creado: 2
 | DW-003 | Plan de medición: eventos whatsapp_click, calculator_use, quiz_complete, form_submit | P1 | analytics-specialist | DW-001 | En validación (PR ciclo 1) | Documento en docs/analytics/ con eventos, disparadores, parámetros y verificación |
 | DW-004 | Instalar GA4 y actualizar política de cookies | P1 | web-developer | DW-003, L5 | Propuesta | Eventos visibles en GA4 DebugView; política de cookies menciona GA4; quality-reviewer valida |
 | DW-005 | Decidir y aplicar AdSense en el sitio comercial | P1 | Director | L4 | Propuesta | Decisión registrada; si se retira, ningún adsbygoogle.js en domiwebb.com |
-| DW-006 | Redirección 301 www → domiwebb.com e /index.html → / | P2 | web-developer | L6, DW-001 | En validación; publicar requiere aprobación | Ambas URL responden 301 al canónico |
+| DW-006 | Redirección 301 www → domiwebb.com e /index.html → / | P2 | web-developer | L6, DW-001 | En validación; publicar requiere aprobación | www.domiwebb.com/<ruta> responde 301 a https://domiwebb.com/<ruta>, comprobado con curl -I tras publicar (ver D-009) |
 | DW-007 | Añadir og:image a todas las páginas | P2 | web-developer | DW-001 | En validación (PR ciclo 1) | Vista previa con imagen al compartir en WhatsApp; seo-page sin avisos OG |
 | DW-008 | Sustituir demos en *.hostingersite.com por subdominios propios | P2 | web-developer | Hostinger (humano) | Propuesta | Ninguna demo enlazada en dominio temporal |
 | DW-009 | Recoger 3 testimonios o casos reales con permiso | P2 | Dirección humana + marketing-specialist | — | Propuesta | Textos aprobados por cada cliente |
@@ -114,9 +114,9 @@ Formato de contrato: `.claude/skills/continuous-improvement/SKILL.md`. Creado: 2
 - Fecha de creación: 2026-11-18
 - Alcance: ver acción; sin cambios fuera de ella.
 - Evidencia inicial: www y apex responden 200 (diagnóstico 2026-11-18).
-- Resultado esperado: Ambas URL responden 301 al canónico.
+- Resultado esperado: www.domiwebb.com/<ruta> responde 301 a https://domiwebb.com/<ruta>, comprobado con curl -I tras publicar (ver D-009).
 - Criterios de aceptación:
-  - [ ] Ambas URL responden 301 al canónico
+  - [ ] www.domiwebb.com/<ruta> responde 301 a https://domiwebb.com/<ruta>, comprobado con curl -I tras publicar (ver D-009)
 - Dependencias / aprobación humana: L6, DW-001
 - Estado: Propuesta
 - Evidencia final: —

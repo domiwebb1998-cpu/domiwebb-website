@@ -8,6 +8,11 @@
   function track(name, params) {
     try { if (typeof window.gtag === "function") window.gtag("event", name, params || {}); } catch (e) {}
   }
+  function linkText(a) {
+    var c = a.cloneNode(true);
+    c.querySelectorAll("svg, script, style").forEach(function (n) { n.remove(); });
+    return (c.textContent || "").replace(/\s+/g, " ").trim().slice(0, 60);
+  }
   var tracked = {};
   function trackOnce(name, params) { if (tracked[name]) return; tracked[name] = true; track(name, params); }
   document.addEventListener("click", function (e) {
@@ -16,7 +21,7 @@
     var sec = a.parentElement ? (a.parentElement.closest("section[id]") || a.parentElement.closest("[id]")) : null;
     track("whatsapp_click", {
       link_id: a.id || "",
-      link_text: (a.innerText || "").trim().slice(0, 60),
+      link_text: linkText(a),
       section: sec ? sec.id : "",
       page_path: location.pathname
     });
