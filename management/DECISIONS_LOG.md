@@ -1,0 +1,11 @@
+# Registro de decisiones
+
+| ID | Fecha | Decisión | Motivo | Alternativas descartadas | Aprobó |
+|---|---|---|---|---|---|
+| D-001 | 2026-11-18 | Adoptar la arquitectura Director (sesión principal) + 8 subagentes | Separar decisión, ejecución y validación | Director como subagente; un agente por skill | Domiwebb (dirección) |
+| D-002 | 2026-11-18 | Claude SEO como referencia de SEO técnico y GEO; Marketing Skills para marketing, copy y CRO; 14 + 14 skills seleccionadas | Evitar duplicación y exceso de contexto | Instalar ambos repos completos | Domiwebb (dirección) |
+| D-003 | 2026-11-18 | Descartar `marketing-skills:seo-audit`, `schema`, `ai-seo`, `programmatic-seo`, `seo-programmatic`, `marketing-ideas` | Duplicadas o sin encaje | — | Director |
+| D-004 | 2026-11-18 | Configuración de agentes vía rama + PR; `main` se crea con un README mínimo porque el repo estaba vacío | Tener base para revisar por PR | Empujar la rama como rama por defecto | Domiwebb (autorizó crear la rama) |
+| D-005 | 2026-11-18 | Plugins no se habilitan en `settings.json`; instalación manual documentada con versiones revisadas | Un `settings.json` inválido anularía las reglas de seguridad | Habilitarlos por configuración | Director |
+| D-006 | 2026-11-18 | Hook `validate-schema.py` de claude-seo revisado y aceptable (sin red) | Fase 3 | — | Director |
+| D-007 | 2026-11-18 | Context7, SE Ranking y Profound descartados por ahora; DataForSEO aplazado | Sin necesidad verificable o con coste sin línea base | — | Director |
