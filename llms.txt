@@ -1,0 +1,28 @@
+# Domiwebb
+
+> Tecnología y consultoría para pymes en Colombia: páginas web, sistemas POS, inventario, facturación, automatización con IA y WhatsApp, y consultoría administrativa, contable y legal. Con sede en Bogotá; también trabaja de forma virtual con negocios de otras ciudades de Colombia.
+
+Domiwebb empieza con un diagnóstico sin compromiso y después envía una propuesta con alcance, tiempos y valor. Contacto: WhatsApp +57 300 941 3721.
+
+## Servicios
+
+- [Páginas web](https://domiwebb.com/paginas-web.html): sitios para pymes y negocios locales, listos en 24 a 72 horas, con dominio, hosting, SSL, botón de WhatsApp, SEO básico y soporte; pago inicial más mensualidad.
+- [Sistemas y automatización](https://domiwebb.com/sistemas-y-automatizacion.html): POS, inventario, facturación, procesos internos, automatización con IA y WhatsApp, tableros de indicadores.
+- [Consultoría empresarial](https://domiwebb.com/consultoria-empresarial.html): procesos y organización administrativa, control contable y flujo de caja, formalización, contratos y políticas de tratamiento de datos.
+
+## Empresa
+
+- [Nosotros](https://domiwebb.com/nosotros.html)
+- [Contacto y diagnóstico](https://domiwebb.com/contacto.html)
+
+## Guías
+
+- [Blog](https://domiwebb.com/blog.html): guías prácticas para pymes en Colombia.
+- [Qué debe tener la página web de una pyme](https://domiwebb.com/blog-que-debe-tener-la-pagina-web-de-una-pyme.html)
+- [¿Página web o solo redes sociales?](https://domiwebb.com/blog-pagina-web-o-solo-redes-sociales.html)
+- [Cómo aparecer en Google Maps](https://domiwebb.com/blog-como-aparecer-en-google-maps.html)
+- [Cómo elegir el dominio de tu negocio](https://domiwebb.com/blog-como-elegir-dominio-para-tu-negocio.html)
+- [Organizar y automatizar WhatsApp Business](https://domiwebb.com/blog-organizar-whatsapp-business.html)
+- [Control de inventario para negocios pequeños](https://domiwebb.com/blog-control-de-inventario-negocio-pequeno.html)
+- [Facturación electrónica en Colombia](https://domiwebb.com/blog-facturacion-electronica-colombia-pymes.html)
+- [Protección de datos personales: Ley 1581](https://domiwebb.com/blog-proteccion-de-datos-personales-ley-1581.html)

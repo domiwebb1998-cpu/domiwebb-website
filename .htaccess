@@ -5,6 +5,9 @@ ErrorDocument 404 /404.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+  # Un solo host canónico (DW-006): www.domiwebb.com → domiwebb.com
+  RewriteCond %{HTTP_HOST} ^www\.domiwebb\.com$ [NC]
+  RewriteRule ^(.*)$ https://domiwebb.com/$1 [R=301,L]
   # Páginas por defecto de Hostinger, sitio anterior y carpetas de respaldo: ya no existen (410).
   RewriteRule ^(default\.php|default\.php\.old\.php)$ - [G,L]
   RewriteRule ^(demo|domiwebb|respaldo-sitio-anterior|assets\.8532|\.builds)(/.*)?$ - [G,L]
