@@ -9,3 +9,7 @@
 | D-005 | 2026-11-18 | Plugins no se habilitan en `settings.json`; instalación manual documentada con versiones revisadas | Un `settings.json` inválido anularía las reglas de seguridad | Habilitarlos por configuración | Director |
 | D-006 | 2026-11-18 | Hook `validate-schema.py` de claude-seo revisado y aceptable (sin red) | Fase 3 | — | Director |
 | D-007 | 2026-11-18 | Context7, SE Ranking y Profound descartados por ahora; DataForSEO aplazado | Sin necesidad verificable o con coste sin línea base | — | Director |
+| D-008 | 2026-11-18 | DW-012 se cierra sin cambios | Las 2 imágenes sin texto alternativo son el logo junto al texto "Domiwebb": `alt=""` es correcto para imagen decorativa | Añadir alt redundante | Director |
+| D-009 | 2026-11-18 | DW-006 solo redirige `www` → `domiwebb.com`; no se redirige `/index.html` | El menú enlaza `index.html`; redirigirlo añadiría un salto en cada clic. El canonical ya resuelve el duplicado | Redirigir `/index.html` → `/` | Director |
+| D-010 | 2026-11-18 | Eventos de medición en `site.js` antes de instalar GA4 | No cambian nada sin `gtag`; dejan la instalación en un solo paso | Esperar a GA4 para programar eventos | Director |
+| D-011 | 2026-11-18 | DW-011: schema del Perfil de Empresa y horario no se añaden | Datos no confirmados; no se inventan | — | Director |

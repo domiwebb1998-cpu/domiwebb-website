@@ -4,6 +4,29 @@
   function waLink(text) { return "https://wa.me/" + WA + "?text=" + encodeURIComponent(text); }
   function fmt(n) { return Math.round(n).toLocaleString("es-CO"); }
 
+  // Medición (DW-003): envía eventos solo si GA4 (gtag) está cargado; si no, no hace nada.
+  function track(name, params) {
+    try { if (typeof window.gtag === "function") window.gtag("event", name, params || {}); } catch (e) {}
+  }
+  function linkText(a) {
+    var c = a.cloneNode(true);
+    c.querySelectorAll("svg, script, style").forEach(function (n) { n.remove(); });
+    return (c.textContent || "").replace(/\s+/g, " ").trim().slice(0, 60);
+  }
+  var tracked = {};
+  function trackOnce(name, params) { if (tracked[name]) return; tracked[name] = true; track(name, params); }
+  document.addEventListener("click", function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href*="wa.me/"]') : null;
+    if (!a) return;
+    var sec = a.parentElement ? (a.parentElement.closest("section[id]") || a.parentElement.closest("[id]")) : null;
+    track("whatsapp_click", {
+      link_id: a.id || "",
+      link_text: linkText(a),
+      section: sec ? sec.id : "",
+      page_path: location.pathname
+    });
+  }, true);
+
   // Cada página abre desde arriba (no recuerda el scroll de la visita anterior)
   try { if ("scrollRestoration" in history) history.scrollRestoration = "manual"; } catch (e) {}
   function toTop(smooth) { window.scrollTo({ top: 0, left: 0, behavior: smooth ? "smooth" : "auto" }); }
@@ -73,6 +96,9 @@
     }
     people.addEventListener("input", calc);
     hours.addEventListener("input", calc);
+    function calcUsed() { trackOnce("calculator_use", { page_path: location.pathname }); }
+    people.addEventListener("change", calcUsed);
+    hours.addEventListener("change", calcUsed);
     calc();
   }
 
@@ -103,6 +129,7 @@
       picks.slice(0, 3).forEach(function (k) { var li = document.createElement("li"); li.textContent = REC[k]; list.appendChild(li); });
       var txt = "Hola Domiwebb, hice el diagnóstico en su web.\nSector: " + sector.value + "\nMayor problema: " + pain.value + "\n¿Tiene página web?: " + web.value + "\nQuiero conversar sobre cómo optimizar mi negocio.";
       send.href = waLink(txt);
+      trackOnce("quiz_complete", { sector: sector.value, pain: pain.value, has_web: web.value });
     }
     quiz.addEventListener("change", update);
     update();
@@ -125,6 +152,7 @@
       link.href = waLink(text);
       link.hidden = false;
       status.textContent = "Listo. Abre WhatsApp con el botón para enviarnos tu mensaje.";
+      track("form_submit", { service: svc, page_path: location.pathname });
       try { window.open(link.href, "_blank", "noopener"); } catch (err) {}
     });
   }

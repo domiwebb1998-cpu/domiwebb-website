@@ -6,17 +6,17 @@ Formato de contrato: `.claude/skills/continuous-improvement/SKILL.md`. Creado: 2
 |---|---|---|---|---|---|---|
 | DW-001 | Importar el código actual del sitio desde Hostinger | P1 | Dirección humana + web-developer | — | En validación (PR #2) | El repo contiene los archivos servidos hoy; las 18 URL del sitemap y /assets coinciden con producción |
 | DW-002 | Configuración del ecosistema (CLAUDE.md, agentes, settings, management) | P1 | Director | L2 aprobada | En validación (PR) | PR abierto; settings.json válido; deny bloquea push a main; quality-reviewer aprueba |
-| DW-003 | Plan de medición: eventos whatsapp_click, calculator_use, quiz_complete, form_submit | P1 | analytics-specialist | DW-001 | Aprobada | Documento en docs/analytics/ con eventos, disparadores, parámetros y verificación |
+| DW-003 | Plan de medición: eventos whatsapp_click, calculator_use, quiz_complete, form_submit | P1 | analytics-specialist | DW-001 | En validación (PR ciclo 1) | Documento en docs/analytics/ con eventos, disparadores, parámetros y verificación |
 | DW-004 | Instalar GA4 y actualizar política de cookies | P1 | web-developer | DW-003, L5 | Propuesta | Eventos visibles en GA4 DebugView; política de cookies menciona GA4; quality-reviewer valida |
 | DW-005 | Decidir y aplicar AdSense en el sitio comercial | P1 | Director | L4 | Propuesta | Decisión registrada; si se retira, ningún adsbygoogle.js en domiwebb.com |
-| DW-006 | Redirección 301 www → domiwebb.com e /index.html → / | P2 | web-developer | L6, DW-001 | Propuesta | Ambas URL responden 301 al canónico |
-| DW-007 | Añadir og:image a todas las páginas | P2 | web-developer | DW-001 | Aprobada | Vista previa con imagen al compartir en WhatsApp; seo-page sin avisos OG |
+| DW-006 | Redirección 301 www → domiwebb.com e /index.html → / | P2 | web-developer | L6, DW-001 | En validación; publicar requiere aprobación | www.domiwebb.com/<ruta> responde 301 a https://domiwebb.com/<ruta>, comprobado con curl -I tras publicar (ver D-009) |
+| DW-007 | Añadir og:image a todas las páginas | P2 | web-developer | DW-001 | En validación (PR ciclo 1) | Vista previa con imagen al compartir en WhatsApp; seo-page sin avisos OG |
 | DW-008 | Sustituir demos en *.hostingersite.com por subdominios propios | P2 | web-developer | Hostinger (humano) | Propuesta | Ninguna demo enlazada en dominio temporal |
 | DW-009 | Recoger 3 testimonios o casos reales con permiso | P2 | Dirección humana + marketing-specialist | — | Propuesta | Textos aprobados por cada cliente |
 | DW-010 | Revisión de la publicación automática de Pyme al Día | P2 | Director + quality-reviewer | L7, L8 | Propuesta | Nuevas guías llegan por PR y pasan validación |
-| DW-011 | Ampliar schema (Perfil de Empresa, horario) y crear llms.txt | P3 | seo-specialist → web-developer | DW-001 | Aprobada | Validador sin errores; /llms.txt responde 200 |
+| DW-011 | Ampliar schema (Perfil de Empresa, horario) y crear llms.txt | P3 | seo-specialist → web-developer | DW-001 | Parcial: llms.txt hecho; schema GBP pendiente de datos | Validador sin errores; /llms.txt responde 200 |
 | DW-013 | Limpiar del servidor los restos del sitio anterior (.builds con node_modules, assets.8532, demo, respaldos, default.php) | P3 | Dirección humana | Aprobación de borrado | Propuesta | Las rutas siguen devolviendo 410 y ya no existen en public_html; copia de respaldo descargada antes |
-| DW-012 | Texto alt en imágenes no decorativas | P3 | web-developer | DW-001 | Aprobada | Lighthouse accesibilidad sin avisos de alt |
+| DW-012 | Texto alt en imágenes no decorativas | P3 | web-developer | DW-001 | Cerrada sin cambios | Lighthouse accesibilidad sin avisos de alt |
 
 ## Contratos
 
@@ -114,9 +114,9 @@ Formato de contrato: `.claude/skills/continuous-improvement/SKILL.md`. Creado: 2
 - Fecha de creación: 2026-11-18
 - Alcance: ver acción; sin cambios fuera de ella.
 - Evidencia inicial: www y apex responden 200 (diagnóstico 2026-11-18).
-- Resultado esperado: Ambas URL responden 301 al canónico.
+- Resultado esperado: www.domiwebb.com/<ruta> responde 301 a https://domiwebb.com/<ruta>, comprobado con curl -I tras publicar (ver D-009).
 - Criterios de aceptación:
-  - [ ] Ambas URL responden 301 al canónico
+  - [ ] www.domiwebb.com/<ruta> responde 301 a https://domiwebb.com/<ruta>, comprobado con curl -I tras publicar (ver D-009)
 - Dependencias / aprobación humana: L6, DW-001
 - Estado: Propuesta
 - Evidencia final: —
