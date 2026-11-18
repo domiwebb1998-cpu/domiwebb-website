@@ -42,7 +42,7 @@ Doce especialistas organizados por área de negocio. Los ocho originales se ampl
 | Operación | **Operaciones y Finanzas Internas** (nuevo) | `operations-finance.md` | Entregas 24-72 h, cobros y mensualidades, renovaciones, flujo de caja, procesos internos |
 | Control | Analítica e Indicadores del Negocio | `analytics-specialist.md` | GA4, Search Console, Metricool, embudo comercial, MRR; informes semanales y mensuales |
 | Control | Calidad, Seguridad y Cumplimiento | `quality-reviewer.md` | Validación independiente de todo entregable; nunca ejecuta lo que valida |
-| Mejora continua | **Investigador de Mejoras (GitHub)** (nuevo) | `trend-researcher.md` | Revisar GitHub cada 15 días, validar o descartar mejoras por agente y proponer retirar habilidades sin uso. Solo propone |
+| Mejora continua | **Investigador de Mejoras (GitHub)** (nuevo) | `trend-researcher.md` | Revisar GitHub los días 10 y 25 (antes de cada cupo de contenido), validar o descartar mejoras por agente y proponer retirar habilidades sin uso. Solo propone |
 
 ### Enrutamiento rápido
 
