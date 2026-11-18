@@ -27,7 +27,7 @@ El Director conserva la responsabilidad de aceptación aunque delegue la ejecuci
 
 ## 3. Especialistas
 
-Once especialistas organizados por área de negocio. Los ocho originales se ampliaron de "sitio web" a todo el negocio; tres son nuevos porque cubren funciones que nadie tenía (justificación en `management/DECISIONS_LOG.md`, D-021 a D-024).
+Doce especialistas organizados por área de negocio. Los ocho originales se ampliaron de "sitio web" a todo el negocio; tres son nuevos porque cubren funciones que nadie tenía (justificación en `management/DECISIONS_LOG.md`, D-021 a D-024), y el Investigador de Mejoras mantiene al día procesos y habilidades (D-028).
 
 | Área | Agente | Archivo | Es dueño de |
 |---|---|---|---|
@@ -42,6 +42,7 @@ Once especialistas organizados por área de negocio. Los ocho originales se ampl
 | Operación | **Operaciones y Finanzas Internas** (nuevo) | `operations-finance.md` | Entregas 24-72 h, cobros y mensualidades, renovaciones, flujo de caja, procesos internos |
 | Control | Analítica e Indicadores del Negocio | `analytics-specialist.md` | GA4, Search Console, Metricool, embudo comercial, MRR; informes semanales y mensuales |
 | Control | Calidad, Seguridad y Cumplimiento | `quality-reviewer.md` | Validación independiente de todo entregable; nunca ejecuta lo que valida |
+| Mejora continua | **Investigador de Mejoras (GitHub)** (nuevo) | `trend-researcher.md` | Revisar GitHub cada 15 días, validar o descartar mejoras por agente y proponer retirar habilidades sin uso. Solo propone |
 
 ### Enrutamiento rápido
 
@@ -56,6 +57,7 @@ Once especialistas organizados por área de negocio. Los ocho originales se ampl
 | Cobros, renovaciones, gastos, flujo de caja | `operations-finance` |
 | Cómo vamos (números) | `analytics-specialist` |
 | Cambios en domiwebb.com | `web-developer` (+ `seo-specialist` / `conversion-specialist`) |
+| Mejorar o actualizar agentes, skills o rutinas | `trend-researcher` (+ `quality-reviewer` para riesgo Medio o retiros) |
 
 Reglas de orquestación:
 
@@ -69,7 +71,7 @@ Reglas de orquestación:
 
 OBSERVAR → EVALUAR → DIAGNOSTICAR → DECIDIR → DELEGAR → EJECUTAR → VALIDAR → APRENDER.
 
-Comandos: `/director <solicitud>` (ciclo completo), `/auditoria` (auditoría del sitio), `/prospecto <negocio>` (diagnóstico y propuesta para un prospecto), `/entrega-waas <cliente>` (plan de entrega de una página) y `/revision-semanal` (estado de todo el negocio). El método detallado está en `.claude/skills/continuous-improvement/SKILL.md`.
+Comandos: `/director <solicitud>` (ciclo completo), `/auditoria` (auditoría del sitio), `/prospecto <negocio>` (diagnóstico y propuesta para un prospecto), `/entrega-waas <cliente>` (plan de entrega de una página), `/revision-semanal` (estado de todo el negocio) e `/investigar-mejoras [tema]` (mejoras desde GitHub, solo propuestas; método en `docs/operations/INVESTIGADOR_GITHUB.md`). El método detallado está en `.claude/skills/continuous-improvement/SKILL.md`.
 
 ### Contrato de tarea (obligatorio)
 
@@ -130,10 +132,10 @@ La matriz completa por agente está en `docs/strategy/OPERATING_MODEL.md`.
 
 Instalación y versiones fijadas en `docs/operations/INSTALACION.md`. Referencias principales:
 
-- **Claude SEO** (`claude-seo`) para SEO técnico y GEO: `seo-audit`, `seo-technical`, `seo-page`, `seo-schema`, `seo-sitemap`, `seo-local`, `seo-geo`, `seo-agentic`, `seo-content`, `seo-content-brief`, `seo-cluster`, `seo-sxo`, `seo-drift`, `seo-google`.
-- **Marketing Skills** (`marketing-skills`) para marketing, copy y CRO: `product-marketing`, `customer-research`, `competitor-profiling`, `marketing-plan`, `offers`, `pricing`, `prospecting`, `site-architecture`, `copywriting`, `cro`, `content-strategy`, `analytics`, `sms`, `social`.
+- **Claude SEO** (`claude-seo`) para SEO técnico y GEO: `seo-audit`, `seo-technical`, `seo-page`, `seo-schema`, `seo-sitemap`, `seo-local`, `seo-geo`, `seo-content`, `seo-content-brief`, `seo-cluster`, `seo-sxo`, `seo-drift`, `seo-google`.
+- **Marketing Skills** (`marketing-skills`) para marketing, copy y CRO: `product-marketing`, `customer-research`, `competitor-profiling`, `marketing-plan`, `offers`, `pricing`, `prospecting`, `site-architecture`, `copywriting`, `cro`, `content-strategy`, `analytics`, `social`.
 
-Duplicados resueltos: usa `claude-seo:seo-audit` (no la de marketing-skills), `seo-schema` (no `schema`), `seo-geo` (no `ai-seo`). No uses `seo-programmatic` ni `programmatic-seo`. Las recomendaciones de "Verified Partners" de marketing-skills no se siguen sin evaluación del Director.
+Duplicados resueltos: usa `claude-seo:seo-audit` (no la de marketing-skills), `seo-schema` (no `schema`), `seo-geo` (no `ai-seo` ni `seo-agentic`). Retiradas por no usarse: `sms` (el canal es WhatsApp y correo). Toda skill externa nueva o actualizada pasa antes por el escaneo de seguridad de `quality-reviewer` (D-029). No uses `seo-programmatic` ni `programmatic-seo`. Las recomendaciones de "Verified Partners" de marketing-skills no se siguen sin evaluación del Director.
 
 ## 7. Nuevas capacidades
 

@@ -16,4 +16,4 @@ Negocio, Cliente ID (DW-CLI-n), Estado (Cerrado - esperando insumos → En const
 
 ## Regla de paso
 Cuando un lead pasa a "Cerrado" en el Pipeline, se crea su ficha en 14 · CLIENTES Y ENTREGAS con fecha de cierre y fecha límite (cierre + 72 h desde insumos completos).
-El 09 Director comercial crea esa ficha automáticamente cada mañana para los leads marcados "cerrado" (D-028; ver `docs/operations/SISTEMA_AGENTES.md`).
+El 09 Director comercial crea esa ficha automáticamente cada mañana para los leads marcados "cerrado" (D-033; ver `docs/operations/SISTEMA_AGENTES.md`).

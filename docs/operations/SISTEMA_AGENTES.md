@@ -1,6 +1,6 @@
 # Sistema de agentes de Domiwebb: quién orquesta y cómo fluye la cadena
 
-Actualizado: 2026-11-18 (D-028). Ningún dato de prospectos o clientes se guarda en este repositorio.
+Actualizado: 2026-11-18 (D-033). Ningún dato de prospectos o clientes se guarda en este repositorio.
 
 ## Dos capas que trabajan juntas
 
@@ -38,13 +38,13 @@ Comparten la verdad en: Pipeline comercial (prospectos), Notion 13 · OFERTA Y P
 - Contactado con más de 21 días sin respuesta: un solo mensaje de cierre de ciclo; si sigue igual 7 días después, propone pasarlo a descartado (decide el dueño).
 - Precios: solo los marcados APROBADO en Notion 13 (D-027).
 
-## Lo que se corrigió el 2026-11-18 (D-028)
+## Lo que se corrigió el 2026-11-18 (D-033)
 
 1. El Radar contaba como pendientes las ideas "En guion" aunque ya estuvieran publicadas, así que dejó de crear ideas desde el 29 de octubre. Ahora cuenta solo "Nueva" y "En hooks", y el Copywriter cierra cada idea como "Producida". Las 14 ideas ya publicadas se cerraron.
 2. El 09 Leads solo diagnosticaba leads de contenido (había 0) y su mensaje competía con el del Director. Se convirtió en el 09 Director comercial, que diagnostica todos los leads y escribe un único mensaje por lead.
 3. El 11 Auditor ahora vigila al Director, avisa si pasan 7 días sin ideas nuevas, si hay ideas atascadas, si falta contenido para 5 días hábiles, si los mensajes del Director no se envían y si el contenido no registra leads.
 
-## Dos canales de envío en el Pipeline (D-029)
+## Dos canales de envío en el Pipeline (D-034)
 
 | | 📸 Instagram | ✉️ Correo |
 |---|---|---|
