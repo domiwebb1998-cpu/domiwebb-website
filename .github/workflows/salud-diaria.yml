@@ -65,6 +65,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          gh label create alerta-sitio --color B60205 --description "Fallo crítico del chequeo diario" 2>/dev/null || true
           for n in $(gh issue list --label alerta-sitio --state open --json number --jq '.[].number'); do
             gh issue close "$n" --comment "Resuelto: el chequeo de $(date -u +%F) pasó sin fallos críticos." --reason completed
           done

@@ -31,7 +31,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
-      GH_TOKEN: ${{ github.token }}
       MODELO: ${{ vars.AUDITORIA_IA_MODELO || 'claude-sonnet-5-5' }}
       MAX_MES: ${{ vars.AUDITORIA_IA_MAX_MES || '5' }}
       MAX_TURNOS: ${{ vars.AUDITORIA_IA_MAX_TURNOS || '25' }}
@@ -39,6 +38,7 @@ jobs:
       - name: Comprobar clave y tope mensual
         id: guarda
         env:
+          GH_TOKEN: ${{ github.token }}
           TIENE_CLAVE: ${{ secrets.ANTHROPIC_API_KEY != '' }}
         run: |
           if [ "$TIENE_CLAVE" != "true" ]; then
@@ -46,8 +46,9 @@ jobs:
             echo "seguir=false" >> "$GITHUB_OUTPUT"; exit 0
           fi
           desde=$(date -u +%Y-%m-01)
-          hechas=$(gh api "repos/${{ github.repository }}/actions/workflows/auditoria-semanal.yml/runs?created=>=${desde}&per_page=100" \
-            --jq "[.workflow_runs[] | select(.id != ${{ github.run_id }}) | select(.conclusion == \"success\" or .conclusion == \"failure\")] | length")
+          # Cuenta toda ejecución terminada este mes (también canceladas o agotadas por tiempo).
+          hechas=$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/auditoria-semanal.yml/runs?created=>=${desde}&per_page=100" \
+            --jq "[.workflow_runs[] | select(.id != ${GITHUB_RUN_ID}) | select(.conclusion != null and .conclusion != \"skipped\")] | length")
           echo "Ejecuciones este mes: ${hechas} de ${MAX_MES}" | tee -a "$GITHUB_STEP_SUMMARY"
           if [ "$hechas" -ge "$MAX_MES" ]; then
             echo "Tope mensual alcanzado: no se ejecuta." | tee -a "$GITHUB_STEP_SUMMARY"
@@ -58,12 +59,16 @@ jobs:
 
       - uses: actions/checkout@v4
         if: steps.guarda.outputs.seguir == 'true'
+        with:
+          persist-credentials: false   # el token de GitHub no queda en .git/config al alcance del agente
 
       - name: Chequeo de salud previo (gratis)
         if: steps.guarda.outputs.seguir == 'true'
         continue-on-error: true
         run: python3 scripts/monitor/salud_sitio.py --informe /tmp/salud.md
 
+      # Permisos del agente: sin terminal; lectura del repositorio (por defecto) y de /tmp/salud.md;
+      # escritura solo en management/audit-reports/ e IMPROVEMENT_BACKLOG.md; web solo domiwebb.com.
       - name: Auditoría con Claude
         if: steps.guarda.outputs.seguir == 'true'
         uses: anthropics/claude-code-action@v1
@@ -73,8 +78,8 @@ jobs:
           claude_args: >-
             --model ${{ env.MODELO }}
             --max-turns ${{ env.MAX_TURNOS }}
-            --allowedTools "Read,Glob,Grep,Write,Edit,WebFetch(domain:domiwebb.com)"
-            --disallowedTools "Bash"
+            --allowedTools "Read(//tmp/salud.md),WebFetch(domain:domiwebb.com),Write(management/audit-reports/**),Edit(management/audit-reports/**),Edit(management/IMPROVEMENT_BACKLOG.md)"
+            --disallowedTools "Bash,Read(//proc/**),Read(//home/runner/**),Read(.git/**)"
           prompt: |
             Actúa como DOMIWEBB AI DIRECTOR (lee CLAUDE.md) en una auditoría semanal de solo lectura.
             Hoy es ${{ steps.guarda.outputs.fecha }}.
@@ -91,44 +96,76 @@ jobs:
             lo que no puedas comprobar se marca PENDIENTE DE VALIDACIÓN. Sin datos de GA4 o Search Console
             en el repositorio, dilo como limitación en lugar de suponer.
 
+      # La verificación y la publicación no ejecutan git dentro del área de trabajo del agente
+      # (podría haber dejado configuración o hooks): se compara contra un clon limpio.
       - name: Verificar que solo cambió management/
         id: cambios
         if: steps.guarda.outputs.seguir == 'true'
         run: |
-          git add -A
-          fuera=$(git diff --cached --name-only | grep -v -E '^management/(audit-reports/[^/]+\.md|IMPROVEMENT_BACKLOG\.md)$' || true)
+          limpio="$RUNNER_TEMP/limpio"
+          git -c core.hooksPath=/dev/null clone --quiet --depth 1 --branch "$GITHUB_REF_NAME" \
+            "https://github.com/${GITHUB_REPOSITORY}.git" "$limpio"
+          diff -rq --exclude=.git "$limpio" "$GITHUB_WORKSPACE" > "$RUNNER_TEMP/diff.txt" || true
+          : > "$RUNNER_TEMP/permitidos.txt"; fuera=""
+          while read -r linea; do
+            case "$linea" in
+              "Files $limpio/"*" and $GITHUB_WORKSPACE/"*" differ") f=${linea#Files $limpio/}; f=${f%% and *} ;;
+              "Only in $GITHUB_WORKSPACE/"*) d=${linea#Only in $GITHUB_WORKSPACE/}; f="${d%%: *}/${d#*: }" ;;
+              "Only in $GITHUB_WORKSPACE: "*) f=${linea#Only in $GITHUB_WORKSPACE: } ;;
+              *) fuera="$fuera\n$linea"; continue ;;
+            esac
+            if [[ "$f" =~ ^management/audit-reports/[^/]+\.md$ || "$f" == "management/IMPROVEMENT_BACKLOG.md" ]]; then
+              echo "$f" >> "$RUNNER_TEMP/permitidos.txt"
+            else
+              fuera="$fuera\n$f"
+            fi
+          done < "$RUNNER_TEMP/diff.txt"
           if [ -n "$fuera" ]; then
-            echo "Claude cambió archivos fuera de lo permitido; se descarta todo:" | tee -a "$GITHUB_STEP_SUMMARY"
-            echo "$fuera" | tee -a "$GITHUB_STEP_SUMMARY"
+            echo "Cambios fuera de lo permitido; no se publica nada:" | tee -a "$GITHUB_STEP_SUMMARY"
+            echo -e "$fuera" | tee -a "$GITHUB_STEP_SUMMARY"
             exit 1
           fi
-          if git diff --cached --quiet; then
+          while read -r f; do
+            if grep -qE 'sk-ant-|ghs_|gh[pousr]_[A-Za-z0-9]{20,}' "$GITHUB_WORKSPACE/$f"; then
+              echo "Posible credencial en $f; no se publica nada." | tee -a "$GITHUB_STEP_SUMMARY"; exit 1
+            fi
+          done < "$RUNNER_TEMP/permitidos.txt"
+          if [ -s "$RUNNER_TEMP/permitidos.txt" ]; then
+            echo "hay=true" >> "$GITHUB_OUTPUT"
+          else
             echo "La auditoría no produjo cambios." | tee -a "$GITHUB_STEP_SUMMARY"
             echo "hay=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "hay=true" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Abrir PR con el informe
         if: steps.cambios.outputs.hay == 'true'
         env:
+          GH_TOKEN: ${{ github.token }}
           FECHA: ${{ steps.guarda.outputs.fecha }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          rama="auditoria/${FECHA}-${{ github.run_id }}"
+          rama="auditoria/${FECHA}-${GITHUB_RUN_ID}"
+          limpio="$RUNNER_TEMP/limpio"
+          while read -r f; do
+            mkdir -p "$limpio/$(dirname "$f")"; cp "$GITHUB_WORKSPACE/$f" "$limpio/$f"
+          done < "$RUNNER_TEMP/permitidos.txt"
+          cd "$limpio"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch -c "$rama"
-          git commit -m "Auditoría semanal ${FECHA} (automática)"
-          git push -u origin "$rama"
+          git add management/
+          git -c core.hooksPath=/dev/null commit --no-verify -m "Auditoría semanal ${FECHA} (automática)"
+          git -c core.hooksPath=/dev/null push --no-verify \
+            "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "$rama"
           cuerpo="Informe semanal generado por la auditoría con IA (modelo ${MODELO}). Ejecución: ${RUN_URL}. Revisar antes de fusionar: solo cambia management/."
-          gh pr create --base main --head "$rama" --title "Auditoría semanal ${FECHA}" --body "$cuerpo" \
-            || gh issue create --title "Auditoría semanal ${FECHA} lista en la rama ${rama}" --body "$cuerpo (No se pudo abrir el PR: activa 'Allow GitHub Actions to create pull requests' en Settings → Actions.)"
+          gh pr create --repo "$GITHUB_REPOSITORY" --base main --head "$rama" --title "Auditoría semanal ${FECHA}" --body "$cuerpo" \
+            || gh issue create --repo "$GITHUB_REPOSITORY" --title "Auditoría semanal ${FECHA} lista en la rama ${rama}" --body "$cuerpo (No se pudo abrir el PR: activa 'Allow GitHub Actions to create and approve pull requests' en Settings → Actions → General.)"
 
       - name: Avisar si la auditoría falló
         if: failure() && steps.guarda.outputs.seguir == 'true'
         env:
+          GH_TOKEN: ${{ github.token }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          gh label create alerta-auditoria --color D93F0B --description "Fallo de la auditoría semanal con IA" 2>/dev/null || true
-          gh issue create --title "Auditoría semanal con IA falló ($(date -u +%F))" --label alerta-auditoria --body "Revisa la ejecución: ${RUN_URL}"
+          gh label create alerta-auditoria --color D93F0B --description "Fallo de la auditoría semanal con IA" --repo "$GITHUB_REPOSITORY" 2>/dev/null || true
+          gh issue create --repo "$GITHUB_REPOSITORY" --title "Auditoría semanal con IA falló ($(date -u +%F))" --label alerta-auditoria --body "Revisa la ejecución: ${RUN_URL}"

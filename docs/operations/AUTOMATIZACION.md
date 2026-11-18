@@ -41,7 +41,9 @@ Claude lee el informe de salud, el backlog, las métricas y el último informe. 
 
 El flujo comprueba que solo cambiaron esos archivos de `management/` y abre un **PR** para que la dirección lo revise. Si cambió cualquier otro archivo, lo descarta todo.
 
-Claude no tiene terminal: solo puede leer, escribir en el repositorio de la ejecución y consultar domiwebb.com.
+Claude no tiene terminal. Solo puede leer el repositorio, consultar domiwebb.com y escribir en `management/audit-reports/` y en `IMPROVEMENT_BACKLOG.md`.
+
+El token de GitHub no queda guardado en la copia que usa el agente. El PR se arma en un clon limpio al que solo se copian los archivos permitidos.
 
 ### Límites de gasto y ejecución
 
@@ -66,7 +68,7 @@ Es una estimación, no una medición. Hay que confirmarla con el uso real en la 
 | `claude-sonnet-5-5` (por defecto) | USD 2 / 10 | ≈ USD 0,50–1,50 | ≈ USD 2–8 |
 | `claude-opus-5-5` | USD 4 / 20 | ≈ USD 1–3 | ≈ USD 4–15 |
 
-Supuestos: entre 15 y 25 turnos, con caché de contexto, unos 0,5–1 millón de tokens de entrada y menos de 30 000 de salida. GitHub Actions no cobra los minutos en un repositorio público.
+Precios y nombres de modelo según la documentación de la API de Anthropic consultada el 2026-11-18 (PENDIENTE DE VALIDACIÓN: confírmalos en https://www.anthropic.com/pricing antes de activar). Supuestos: entre 15 y 25 turnos, con caché de contexto, unos 0,5–1 millón de tokens de entrada y menos de 30 000 de salida. GitHub Actions no cobra los minutos en un repositorio público.
 
 ### Cómo activarla (lo hace la dirección)
 
@@ -83,6 +85,8 @@ Supuestos: entre 15 y 25 turnos, con caché de contexto, unos 0,5–1 millón de
 - Sin tocar nada de lo anterior: **Actions → Auditoría semanal con IA → ··· → Disable workflow**.
 
 ## Notas
+
+- Pendiente de endurecimiento (DW-017): fijar las acciones de terceros (`actions/checkout`, `actions/upload-artifact`, `anthropics/claude-code-action`) por SHA de commit en lugar de etiqueta. Recomendado también: regla de protección de la rama `main` (Settings → Branches).
 
 - GitHub suspende los flujos programados de un repositorio público si pasan 60 días sin actividad en él. Si eso pasa, se reactivan desde la pestaña Actions.
 - Los PR que abre un flujo con `GITHUB_TOKEN` no disparan otros flujos. Aquí no importa, porque el repositorio no tiene CI.
