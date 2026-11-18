@@ -1,0 +1,224 @@
+# Backlog de mejora
+
+Formato de contrato: `.claude/skills/continuous-improvement/SKILL.md`. Creado: 2026-11-18. Origen: `management/audit-reports/2026-11-18-diagnostico-inicial.md`.
+
+| ID | Acción | Prioridad | Responsable | Dependencias | Estado | Criterios de aceptación |
+|---|---|---|---|---|---|---|
+| DW-001 | Importar el código actual del sitio desde Hostinger | P1 | Dirección humana + web-developer | — | Bloqueada (esperando zip de public_html) | El repo contiene los archivos servidos hoy; las 18 URL del sitemap y /assets coinciden con producción |
+| DW-002 | Configuración del ecosistema (CLAUDE.md, agentes, settings, management) | P1 | Director | L2 aprobada | En validación (PR) | PR abierto; settings.json válido; deny bloquea push a main; quality-reviewer aprueba |
+| DW-003 | Plan de medición: eventos whatsapp_click, calculator_use, quiz_complete, form_submit | P1 | analytics-specialist | DW-001 | Aprobada | Documento en docs/analytics/ con eventos, disparadores, parámetros y verificación |
+| DW-004 | Instalar GA4 y actualizar política de cookies | P1 | web-developer | DW-003, L5 | Propuesta | Eventos visibles en GA4 DebugView; política de cookies menciona GA4; quality-reviewer valida |
+| DW-005 | Decidir y aplicar AdSense en el sitio comercial | P1 | Director | L4 | Propuesta | Decisión registrada; si se retira, ningún adsbygoogle.js en domiwebb.com |
+| DW-006 | Redirección 301 www → domiwebb.com e /index.html → / | P2 | web-developer | L6, DW-001 | Propuesta | Ambas URL responden 301 al canónico |
+| DW-007 | Añadir og:image a todas las páginas | P2 | web-developer | DW-001 | Aprobada | Vista previa con imagen al compartir en WhatsApp; seo-page sin avisos OG |
+| DW-008 | Sustituir demos en *.hostingersite.com por subdominios propios | P2 | web-developer | Hostinger (humano) | Propuesta | Ninguna demo enlazada en dominio temporal |
+| DW-009 | Recoger 3 testimonios o casos reales con permiso | P2 | Dirección humana + marketing-specialist | — | Propuesta | Textos aprobados por cada cliente |
+| DW-010 | Revisión de la publicación automática de Pyme al Día | P2 | Director + quality-reviewer | L7, L8 | Propuesta | Nuevas guías llegan por PR y pasan validación |
+| DW-011 | Ampliar schema (Perfil de Empresa, horario) y crear llms.txt | P3 | seo-specialist → web-developer | DW-001 | Aprobada | Validador sin errores; /llms.txt responde 200 |
+| DW-012 | Texto alt en imágenes no decorativas | P3 | web-developer | DW-001 | Aprobada | Lighthouse accesibilidad sin avisos de alt |
+
+## Contratos
+
+### DW-001 — Importar el código actual del sitio desde Hostinger
+- Objetivo: Importar el código actual del sitio desde Hostinger.
+- Problema u oportunidad: Repo vacío; código solo en Hostinger.
+- Responsable: Dirección humana + web-developer
+- Prioridad: P1
+- Fecha de creación: 2026-11-18
+- Alcance: ver acción; sin cambios fuera de ella.
+- Evidencia inicial: Repo vacío; código solo en Hostinger (diagnóstico 2026-11-18).
+- Resultado esperado: El repo contiene los archivos servidos hoy; las 18 URL del sitemap y /assets coinciden con producción.
+- Criterios de aceptación:
+  - [ ] El repo contiene los archivos servidos hoy; las 18 URL del sitemap y /assets coinciden con producción
+- Dependencias / aprobación humana: —
+- Estado: Bloqueada (esperando zip de public_html)
+- Evidencia final: —
+- Responsable de validación: quality-reviewer
+- Decisión del Director: —
+
+### DW-002 — Configuración del ecosistema (CLAUDE.md, agentes, settings, management)
+- Objetivo: Configuración del ecosistema (CLAUDE.md, agentes, settings, management).
+- Problema u oportunidad: Ecosistema aprobado 2026-11-18.
+- Responsable: Director
+- Prioridad: P1
+- Fecha de creación: 2026-11-18
+- Alcance: ver acción; sin cambios fuera de ella.
+- Evidencia inicial: Ecosistema aprobado 2026-11-18 (diagnóstico 2026-11-18).
+- Resultado esperado: PR abierto; settings.json válido; deny bloquea push a main; quality-reviewer aprueba.
+- Criterios de aceptación:
+  - [ ] PR abierto; settings.json válido; deny bloquea push a main; quality-reviewer aprueba
+- Dependencias / aprobación humana: L2 aprobada
+- Estado: En validación (PR)
+- Evidencia final: —
+- Responsable de validación: quality-reviewer
+- Decisión del Director: —
+
+### DW-003 — Plan de medición: eventos whatsapp_click, calculator_use, quiz_complete, form_submit
+- Objetivo: Plan de medición: eventos whatsapp_click, calculator_use, quiz_complete, form_submit.
+- Problema u oportunidad: Sin GA4 ni analítica en el HTML.
+- Responsable: analytics-specialist
+- Prioridad: P1
+- Fecha de creación: 2026-11-18
+- Alcance: ver acción; sin cambios fuera de ella.
+- Evidencia inicial: Sin GA4 ni analítica en el HTML (diagnóstico 2026-11-18).
+- Resultado esperado: Documento en docs/analytics/ con eventos, disparadores, parámetros y verificación.
+- Criterios de aceptación:
+  - [ ] Documento en docs/analytics/ con eventos, disparadores, parámetros y verificación
+- Dependencias / aprobación humana: DW-001
+- Estado: Aprobada
+- Evidencia final: —
+- Responsable de validación: quality-reviewer
+- Decisión del Director: —
+
+### DW-004 — Instalar GA4 y actualizar política de cookies
+- Objetivo: Instalar GA4 y actualizar política de cookies.
+- Problema u oportunidad: Sin medición.
+- Responsable: web-developer
+- Prioridad: P1
+- Fecha de creación: 2026-11-18
+- Alcance: ver acción; sin cambios fuera de ella.
+- Evidencia inicial: Sin medición (diagnóstico 2026-11-18).
+- Resultado esperado: Eventos visibles en GA4 DebugView; política de cookies menciona GA4; quality-reviewer valida.
+- Criterios de aceptación:
+  - [ ] Eventos visibles en GA4 DebugView; política de cookies menciona GA4; quality-reviewer valida
+- Dependencias / aprobación humana: DW-003, L5
+- Estado: Propuesta
+- Evidencia final: —
+- Responsable de validación: quality-reviewer
+- Decisión del Director: —
+
+### DW-005 — Decidir y aplicar AdSense en el sitio comercial
+- Objetivo: Decidir y aplicar AdSense en el sitio comercial.
+- Problema u oportunidad: adsbygoogle.js en todas las páginas.
+- Responsable: Director
+- Prioridad: P1
+- Fecha de creación: 2026-11-18
+- Alcance: ver acción; sin cambios fuera de ella.
+- Evidencia inicial: adsbygoogle.js en todas las páginas (diagnóstico 2026-11-18).
+- Resultado esperado: Decisión registrada; si se retira, ningún adsbygoogle.js en domiwebb.com.
+- Criterios de aceptación:
+  - [ ] Decisión registrada; si se retira, ningún adsbygoogle.js en domiwebb.com
+- Dependencias / aprobación humana: L4
+- Estado: Propuesta
+- Evidencia final: —
+- Responsable de validación: quality-reviewer
+- Decisión del Director: —
+
+### DW-006 — Redirección 301 www → domiwebb.com e /index.html → /
+- Objetivo: Redirección 301 www → domiwebb.com e /index.html → /.
+- Problema u oportunidad: www y apex responden 200.
+- Responsable: web-developer
+- Prioridad: P2
+- Fecha de creación: 2026-11-18
+- Alcance: ver acción; sin cambios fuera de ella.
+- Evidencia inicial: www y apex responden 200 (diagnóstico 2026-11-18).
+- Resultado esperado: Ambas URL responden 301 al canónico.
+- Criterios de aceptación:
+  - [ ] Ambas URL responden 301 al canónico
+- Dependencias / aprobación humana: L6, DW-001
+- Estado: Propuesta
+- Evidencia final: —
+- Responsable de validación: quality-reviewer
+- Decisión del Director: —
+
+### DW-007 — Añadir og:image a todas las páginas
+- Objetivo: Añadir og:image a todas las páginas.
+- Problema u oportunidad: Sin og:image.
+- Responsable: web-developer
+- Prioridad: P2
+- Fecha de creación: 2026-11-18
+- Alcance: ver acción; sin cambios fuera de ella.
+- Evidencia inicial: Sin og:image (diagnóstico 2026-11-18).
+- Resultado esperado: Vista previa con imagen al compartir en WhatsApp; seo-page sin avisos OG.
+- Criterios de aceptación:
+  - [ ] Vista previa con imagen al compartir en WhatsApp; seo-page sin avisos OG
+- Dependencias / aprobación humana: DW-001
+- Estado: Aprobada
+- Evidencia final: —
+- Responsable de validación: quality-reviewer
+- Decisión del Director: —
+
+### DW-008 — Sustituir demos en *.hostingersite.com por subdominios propios
+- Objetivo: Sustituir demos en *.hostingersite.com por subdominios propios.
+- Problema u oportunidad: 2 demos en hostingersite.com.
+- Responsable: web-developer
+- Prioridad: P2
+- Fecha de creación: 2026-11-18
+- Alcance: ver acción; sin cambios fuera de ella.
+- Evidencia inicial: 2 demos en hostingersite.com (diagnóstico 2026-11-18).
+- Resultado esperado: Ninguna demo enlazada en dominio temporal.
+- Criterios de aceptación:
+  - [ ] Ninguna demo enlazada en dominio temporal
+- Dependencias / aprobación humana: Hostinger (humano)
+- Estado: Propuesta
+- Evidencia final: —
+- Responsable de validación: quality-reviewer
+- Decisión del Director: —
+
+### DW-009 — Recoger 3 testimonios o casos reales con permiso
+- Objetivo: Recoger 3 testimonios o casos reales con permiso.
+- Problema u oportunidad: Sin prueba social.
+- Responsable: Dirección humana + marketing-specialist
+- Prioridad: P2
+- Fecha de creación: 2026-11-18
+- Alcance: ver acción; sin cambios fuera de ella.
+- Evidencia inicial: Sin prueba social (diagnóstico 2026-11-18).
+- Resultado esperado: Textos aprobados por cada cliente.
+- Criterios de aceptación:
+  - [ ] Textos aprobados por cada cliente
+- Dependencias / aprobación humana: —
+- Estado: Propuesta
+- Evidencia final: —
+- Responsable de validación: quality-reviewer
+- Decisión del Director: —
+
+### DW-010 — Revisión de la publicación automática de Pyme al Día
+- Objetivo: Revisión de la publicación automática de Pyme al Día.
+- Problema u oportunidad: Publicación directa a main del repo guias-pymes.
+- Responsable: Director + quality-reviewer
+- Prioridad: P2
+- Fecha de creación: 2026-11-18
+- Alcance: ver acción; sin cambios fuera de ella.
+- Evidencia inicial: Publicación directa a main del repo guias-pymes (diagnóstico 2026-11-18).
+- Resultado esperado: Nuevas guías llegan por PR y pasan validación.
+- Criterios de aceptación:
+  - [ ] Nuevas guías llegan por PR y pasan validación
+- Dependencias / aprobación humana: L7, L8
+- Estado: Propuesta
+- Evidencia final: —
+- Responsable de validación: quality-reviewer
+- Decisión del Director: —
+
+### DW-011 — Ampliar schema (Perfil de Empresa, horario) y crear llms.txt
+- Objetivo: Ampliar schema (Perfil de Empresa, horario) y crear llms.txt.
+- Problema u oportunidad: Schema sin GBP; /llms.txt 404.
+- Responsable: seo-specialist → web-developer
+- Prioridad: P3
+- Fecha de creación: 2026-11-18
+- Alcance: ver acción; sin cambios fuera de ella.
+- Evidencia inicial: Schema sin GBP; /llms.txt 404 (diagnóstico 2026-11-18).
+- Resultado esperado: Validador sin errores; /llms.txt responde 200.
+- Criterios de aceptación:
+  - [ ] Validador sin errores; /llms.txt responde 200
+- Dependencias / aprobación humana: DW-001
+- Estado: Aprobada
+- Evidencia final: —
+- Responsable de validación: quality-reviewer
+- Decisión del Director: —
+
+### DW-012 — Texto alt en imágenes no decorativas
+- Objetivo: Texto alt en imágenes no decorativas.
+- Problema u oportunidad: 2 img sin alt por página.
+- Responsable: web-developer
+- Prioridad: P3
+- Fecha de creación: 2026-11-18
+- Alcance: ver acción; sin cambios fuera de ella.
+- Evidencia inicial: 2 img sin alt por página (diagnóstico 2026-11-18).
+- Resultado esperado: Lighthouse accesibilidad sin avisos de alt.
+- Criterios de aceptación:
+  - [ ] Lighthouse accesibilidad sin avisos de alt
+- Dependencias / aprobación humana: DW-001
+- Estado: Aprobada
+- Evidencia final: —
+- Responsable de validación: quality-reviewer
+- Decisión del Director: —
