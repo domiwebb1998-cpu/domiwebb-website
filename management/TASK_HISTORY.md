@@ -13,3 +13,4 @@
 | 2026-11-18 | DW-019 | Cerrada | Director | Base Notion 14 · CLIENTES Y ENTREGAS creada; CRM_NOTION.md actualizado |
 | 2026-11-18 | DW-020 | En validación | Pendiente de la dirección | Propuesta de 3 planes con referencias de 5 competidores |
 | 2026-11-18 | DW-020 | Cerrada | Domiwebb (dirección) | Precios aprobados (D-027); Notion 13 · OFERTA Y PRECIOS actualizada |
+| 2026-11-18 | DW-027 | En validación (PR) | Pendiente quality-reviewer | Rutina 04 (Escritorio) borrada; el conector de Canva se quita desde la configuración de cada rutina (no se puede desde la sesión) |
