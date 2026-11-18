@@ -1,0 +1,8 @@
+.env
+.env.*
+*.pem
+*credentials*.json
+.shopify-env
+node_modules/
+__pycache__/
+.DS_Store
